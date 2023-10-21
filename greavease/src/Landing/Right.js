@@ -1,0 +1,82 @@
+import React from "react";
+const Right = () => {
+  const cardStyles = {
+    position: "fixed",
+    top: "45%",
+    left: "55px",
+    transform: "translate(0, -50%)",
+    width: "700px",
+    height: "500px",
+    backgroundColor: "rgba(255, 255, 255, 0)", // Transparent white background
+    // Box shadow for a subtle effect
+    borderRadius: "8px",
+    padding: "20px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+  const headingStyles = {
+    fontSize: "55px", // Adjust the font size as needed
+    fontFamily: 'Oswald, sans-serif',
+    padding:"0",
+    margin:"2px 0",
+    
+  };
+  const span1={
+    color:"#3E001F",
+  }
+  const span2={
+    color:"#6C3428"
+  }
+  const pstyle={
+    color:"#3D0C11",
+    fontSize:"25px",
+    margin: '12px 0',
+  }
+  const buttonStyles = {
+    backgroundColor: 'rgba(243,130,66,255)',
+    color: '#6C3428',
+    border: 'none',
+    borderRadius: '30px', // Add border radius
+    padding: '10px ',
+    cursor: 'pointer',
+    position: 'absolute',
+    bottom: '40px', // Moved to the bottom
+    left: '20px',
+    fontSize:"20px",
+    width:"200px",
+  };
+  buttonStyles[':hover'] = {
+    backgroundColor: 'darkblue', 
+   
+  };
+  const arrowStyles = {
+    fontSize: '60px', // Adjust the size of the arrow as needed
+    marginLeft: '10px',
+    position: 'absolute',
+    color: '#6C3428',
+    bottom: '32px', // Moved to the bottom
+    left: '240px', // Add some spacing between the arrow and button text
+  };
+  const handleButtonClick = () => {
+    // Define the function to be executed when the button is clicked
+    console.log("works!!"); // Replace this with your desired action
+  };
+  return (
+    <div style={cardStyles}>
+      <h1 style={headingStyles}><span style={span1}>Grievances</span> <span style={span2}>becomes solutions </span><span style={span1}>here</span></h1>
+      <p style={pstyle}>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.{" "}
+      </p>
+      <span><button style={buttonStyles} onClick={handleButtonClick} >Get Started</button></span>
+      <span style={arrowStyles}>&rarr;</span>
+      
+    </div>
+  );
+};
+
+export default Right;
