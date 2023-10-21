@@ -1,13 +1,11 @@
 import './App.css';
-import Forward from './LandingPage/Forward';
-import LandingPage from './LandingPage/LandingPage';
-import SignupPage from './SignUp/SignUp';
 
+import Merge from './Credential/merge';
 function App() {
   return (
     <div className="App">
+      <Merge></Merge>
     
-    <SignupPage/>
     </div>
   );
 }
