@@ -52,8 +52,8 @@ const Merge = () => {
         <TabPanel value={value} index={0}>
           <Login   handleChange={handleChange} />
         </TabPanel>
-        <TabPanel className="it" value={value} index={1}>
-          <Signup />
+        <TabPanel  value={value} index={1}>
+          <Signup/>
         </TabPanel>
       </Paper>
     </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import './Login.css'
 import {
   Grid,
   Paper,
@@ -22,6 +21,7 @@ const Login = ({ handleChange }) => {
     width: 300,
     margin: "0  auto",
   };
+ 
   const avatarStyle = { backgroundColor: "#1bbd7e" };
   const btnstyle = { margin: "8px 0" };
   const initialValues = {
@@ -45,7 +45,7 @@ const Login = ({ handleChange }) => {
   
   return (
     <Grid >
-      <Paper style={paperStyle}>
+      <Paper className="bc" style={paperStyle}>
         <Grid align="center">
           <Avatar style={avatarStyle}>
             <LockOpenIcon />

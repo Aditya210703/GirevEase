@@ -1,5 +1,4 @@
 import React from "react";
-import './Signup.css'
 import {
   Grid,
   Paper,
@@ -59,6 +58,7 @@ const Signup = () => {
     ),
   });
   const onSubmit = (values, props) => {
+    console.log('IL');
     console.log(values);
     console.log(props);
     setTimeout(() => {
@@ -126,6 +126,7 @@ const Signup = () => {
                 <InputLabel id="demo-select-small-label">SignUp As</InputLabel>
                 <Select
                   labelId="demo-select-small-label"
+                  name="SignupAs"
                   id="demo-select-small"
                   value={age}
                   label="Age"
@@ -166,6 +167,7 @@ const Signup = () => {
                 variant="contained"
                 disabled={props.isSubmitting}
                 color="primary"
+                fullWidth
               >
                 {props.isSubmitting ? "Loading" : "Sign up"}
               </Button>
