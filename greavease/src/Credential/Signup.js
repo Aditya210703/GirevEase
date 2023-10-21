@@ -18,10 +18,10 @@ import { FormHelperText } from "@mui/material";
 import * as Yup from "yup";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 const Signup = () => {
-  const [age, setAge] = React.useState("");
+  const [As, setAs] = React.useState("");
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setAs(event.target.value);
   };
   const paperStyle = { padding: 20, width: 300, margin: "0 auto" };
   const headerStyle = { margin: 0 };
@@ -29,7 +29,7 @@ const Signup = () => {
   const initialValues = {
     name: "",
     email: "",
-    gender: "",
+   
     phoneNumber: "",
     address: "",
     password: "",
@@ -39,9 +39,7 @@ const Signup = () => {
   const validationSchema = Yup.object().shape({
     name: Yup.string().min(3, "It's too short").required("Required"),
     email: Yup.string().email("Enter valid email").required("Required"),
-    gender: Yup.string()
-      .oneOf(["male", "female"], "Required")
-      .required("Required"),
+    
     phoneNumber: Yup.number()
       .typeError("Enter valid Phone Number")
       .required("Required"),
@@ -58,7 +56,7 @@ const Signup = () => {
     ),
   });
   const onSubmit = (values, props) => {
-    console.log('IL');
+    
     console.log(values);
     console.log(props);
     setTimeout(() => {
@@ -126,10 +124,10 @@ const Signup = () => {
                 <InputLabel id="demo-select-small-label">SignUp As</InputLabel>
                 <Select
                   labelId="demo-select-small-label"
-                  name="SignupAs"
+                  name="As"
                   id="demo-select-small"
-                  value={age}
-                  label="Age"
+                  value={As}
+                  label="As"
                   onChange={handleChange}
                 >
                   <MenuItem value={10}>Locality Member</MenuItem>
