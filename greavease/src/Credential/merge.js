@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Typography, Paper, Box, Tab, Tabs } from "@mui/material";
 import Login from "./Login";
 import Signup from "./Signup";
+import './Merge.css'
 const Merge = () => {
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {

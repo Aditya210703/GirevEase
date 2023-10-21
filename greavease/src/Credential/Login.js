@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import './Login.css'
 import {
   Grid,
   Paper,
@@ -21,8 +22,6 @@ const Login = ({ handleChange }) => {
     width: 300,
     margin: "0  auto",
   };
-  const OnsubmitHandler=()=>{console.log("ILR")
-  }
   const avatarStyle = { backgroundColor: "#1bbd7e" };
   const btnstyle = { margin: "8px 0" };
   const initialValues = {
