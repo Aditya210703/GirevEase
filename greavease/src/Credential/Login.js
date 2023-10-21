@@ -45,7 +45,7 @@ const Login = ({ handleChange }) => {
   
   return (
     <Grid >
-      <Paper className="bc" style={paperStyle}>
+      <Paper style={paperStyle}>
         <Grid align="center">
           <Avatar style={avatarStyle}>
             <LockOpenIcon />
