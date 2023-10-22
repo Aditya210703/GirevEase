@@ -43,7 +43,7 @@ const Right = () => {
     padding: '10px ',
     cursor: 'pointer',
     position: 'absolute',
-    bottom: '40px', // Moved to the bottom
+    bottom: '42px', // Moved to the bottom
     left: '20px',
     fontSize:"20px",
     width:"200px",
@@ -53,12 +53,12 @@ const Right = () => {
    
   };
   const arrowStyles = {
-    fontSize: '60px', // Adjust the size of the arrow as needed
-    marginLeft: '10px',
-    position: 'absolute',
-    color: '#6C3428',
-    bottom: '32px', // Moved to the bottom
-    left: '240px', // Add some spacing between the arrow and button text
+    fontSize: '30px', // Adjust the size of the arrow as needed
+    // marginLeft: '10px',
+    // position: 'absolute',
+    // color: '#6C3428',
+    // bottom: '3px', // Moved to the bottom
+    // left: '230px', // Add some spacing between the arrow and button text
   };
   const handleButtonClick = () => {
     // Define the function to be executed when the button is clicked
@@ -74,10 +74,11 @@ const Right = () => {
         scrambled it to make a type specimen book.{" "}
       </p>
       <span>
-        <Link to="/signin"><button style={buttonStyles} onClick={handleButtonClick} >Get Started</button>
-        <span style={arrowStyles}>&rarr;</span>
+        <Link to="/signin"><button style={buttonStyles} onClick={handleButtonClick} >Get Started<span style={arrowStyles}>&rarr;</span></button>
+        
         </Link>
         </span>
+        
 
       
     </div>
