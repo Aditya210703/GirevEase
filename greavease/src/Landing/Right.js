@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 const Right = () => {
   const cardStyles = {
     position: "fixed",
@@ -72,7 +73,9 @@ const Right = () => {
         since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book.{" "}
       </p>
-      <span><button style={buttonStyles} onClick={handleButtonClick} >Get Started</button></span>
+      <span>
+        <Link to="/signin"><button style={buttonStyles} onClick={handleButtonClick} >Get Started</button>
+        </Link></span>
       <span style={arrowStyles}>&rarr;</span>
       
     </div>
