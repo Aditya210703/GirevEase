@@ -75,8 +75,10 @@ const Right = () => {
       </p>
       <span>
         <Link to="/signin"><button style={buttonStyles} onClick={handleButtonClick} >Get Started</button>
-        </Link></span>
-      <span style={arrowStyles}>&rarr;</span>
+        <span style={arrowStyles}>&rarr;</span>
+        </Link>
+        </span>
+
       
     </div>
   );
