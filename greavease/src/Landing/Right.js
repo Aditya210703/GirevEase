@@ -70,10 +70,9 @@ const Right = () => {
         <span style={span1}>here</span>
       </h1>
       <p style={pstyle}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.{" "}
+      Elevate your community experience with GrievEase, where your concerns are heard,
+       and solutions are crafted collaboratively. Join us in building a smarter, 
+       more connected neighborhood. Sign up now, because positive change begins with you!{" "}
       </p>
       <span>
         <Link to="/signin">
