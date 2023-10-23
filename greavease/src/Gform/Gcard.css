@@ -1,0 +1,22 @@
+/* Add this to your CSS file or style section */
+.card {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #B2533E;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .card-header {
+    height:2em;
+    color: #B2533E;
+    
+    font-weight: bold;
+    font-size: 2em;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
