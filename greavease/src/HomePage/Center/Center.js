@@ -1,13 +1,13 @@
 import React from "react";
 import "./Center.css";
+import CardComponent from "../../Gform/Gcard";
 const Center = () => {
   
   return (
     <div>
         <div className="cnte">
       
-      <p className="par">this feature is coming soon.....</p>
-      <p className="par1">on place for local community meetings info.....</p>
+      <CardComponent></CardComponent>
     </div>
     
     </div>

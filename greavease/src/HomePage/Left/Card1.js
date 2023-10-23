@@ -34,14 +34,6 @@ const Card1 = () => {
       imgurl: mis,
     },
   ];
-  const element = [
-    "WaterWorks",
-    "Electricity",
-    "Roadways",
-    "Law Enforcement",
-    "Judicial",
-    "Miscellaneous",
-  ];
   return (
     <div className="card">
       <div className="card-header">Departments</div>
