@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const Right = () => {
   const cardStyles = {
     position: "fixed",
-    top: "45%",
-    left: "55px",
+    top: "48%",
+    left: "5em",
     transform: "translate(0, -50%)",
     width: "700px",
     height: "500px",
