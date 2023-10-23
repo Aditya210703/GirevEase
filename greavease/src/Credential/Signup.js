@@ -1,22 +1,13 @@
 import React from "react";
 import {
-  Grid,
-  Paper,
-  Avatar,
-  Typography,
-  TextField,
-  Button,
-  FormControlLabel,
-  Checkbox,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
+  Grid, Paper, Avatar, Typography, TextField, Button, FormControlLabel, Checkbox, FormControl, InputLabel, MenuItem, Select,
 } from "@mui/material";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { FormHelperText } from "@mui/material";
 import * as Yup from "yup";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from ".././firebase";
 const Signup = () => {
   const [As, setAs] = React.useState("");
 
@@ -29,7 +20,6 @@ const Signup = () => {
   const initialValues = {
     name: "",
     email: "",
-   
     phoneNumber: "",
     address: "",
     password: "",
@@ -39,7 +29,6 @@ const Signup = () => {
   const validationSchema = Yup.object().shape({
     name: Yup.string().min(3, "It's too short").required("Required"),
     email: Yup.string().email("Enter valid email").required("Required"),
-    
     phoneNumber: Yup.number()
       .typeError("Enter valid Phone Number")
       .required("Required"),
@@ -56,9 +45,15 @@ const Signup = () => {
     ),
   });
   const onSubmit = (values, props) => {
-    
     console.log(values);
-    console.log(props);
+    //  console.log(props);
+    createUserWithEmailAndPassword(auth, values.email, values.password).then(res => {
+      //console.log(res);
+      const user = res.user;
+      updateProfile(user, {
+        displayName: values.name,
+      });
+    }).catch((err) => alert("Error-", ErrorMessage));
     setTimeout(() => {
       props.resetForm();
       props.setSubmitting(false);
