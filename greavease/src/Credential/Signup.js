@@ -116,7 +116,7 @@ const Signup = () => {
                 helperText={<ErrorMessage name="address" />}
               />
               <FormControl
-                sx={{ m: 0, minWidth: 280, marginBottom: 0.4 }}
+                sx={{ m: 0, minWidth: 260, marginBottom: 0.4 }}
                 size="medium"
                 fullWidth
               >
