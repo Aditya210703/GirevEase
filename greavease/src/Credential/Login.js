@@ -13,8 +13,12 @@ import {
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
+import {signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from ".././firebase" ;
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ handleChange }) => {
+  const navigate = useNavigate();
   const paperStyle = {
     padding: 20,
     height: "73vh",
@@ -36,7 +40,13 @@ const Login = ({ handleChange }) => {
     password: Yup.string().required("Required"),
   });
   const onSubmit = (values, props) => {
-    console.log(values);
+   // console.log(values);
+   signInWithEmailAndPassword(auth, values.username, values.password).then((userCredential) => {
+    const user = userCredential.user;
+    alert("Sign In successfully");
+    navigate('/home');
+  })
+  .catch((err)=> alert("Invalid Credentials"));
     setTimeout(() => {
       props.resetForm();
       props.setSubmitting(false);

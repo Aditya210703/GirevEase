@@ -7,7 +7,6 @@ const Final=()=>{
         <div>
             <Header></Header>
             <Home></Home>
-            
         </div>
     )
 }
