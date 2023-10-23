@@ -4,9 +4,9 @@ import './Gcard.css'
 class CardComponent extends Component {
   render() {
     return (
-      <div className="card">
-        <div className="card-header">Grievance  Form</div>
-        <div className="card-body">
+      <div className="cardG">
+        <div className="card-headerG">Grievance  Form</div>
+        <div className="card-bodyG">
           <FormComponent />
         </div>
       </div>

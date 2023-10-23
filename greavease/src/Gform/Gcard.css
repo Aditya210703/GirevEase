@@ -1,22 +1,22 @@
 /* Add this to your CSS file or style section */
-.card {
+.cardG {
     width: 100%;
     margin: 0 auto;
-    border: 1px solid #B2533E;
+    
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     
   }
   
-  .card-header {
+  .card-headerG{
     height:2em;
     color: #B2533E;
-    
+    text-align: center;
     font-weight: bold;
     font-size: 2em;
   }
   
-  .card-body {
+  .card-bodyG {
     padding: 20px;
   }
   
