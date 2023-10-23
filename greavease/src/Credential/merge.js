@@ -10,7 +10,7 @@ const Merge = () => {
     setValue(newValue);
   };
 
-  const paperStyle = { width: 500, margin: "20px auto"  };
+  const paperStyle = { width: 500, margin: "20px auto", backgroundColor: "rgba(255,255,255,0.4)"  };
   function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
