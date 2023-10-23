@@ -8,6 +8,7 @@ import * as Yup from "yup";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from ".././firebase";
+import { useNavigate } from "react-router-dom";
 const Signup = () => {
   const [As, setAs] = React.useState("");
 
@@ -44,11 +45,14 @@ const Signup = () => {
       "Accept terms & conditions"
     ),
   });
+  const navigate = useNavigate();
   const onSubmit = (values, props) => {
     console.log(values);
     //  console.log(props);
     createUserWithEmailAndPassword(auth, values.email, values.password).then(res => {
       //console.log(res);
+      alert("Sign up successfully");
+      navigate('/home',{ replace: true });
       const user = res.user;
       updateProfile(user, {
         displayName: values.name,

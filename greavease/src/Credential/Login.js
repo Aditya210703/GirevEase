@@ -44,7 +44,7 @@ const Login = ({ handleChange }) => {
    signInWithEmailAndPassword(auth, values.username, values.password).then((userCredential) => {
     const user = userCredential.user;
     alert("Sign In successfully");
-    navigate('/home');
+    navigate('/home',{ replace: true });
   })
   .catch((err)=> alert("Invalid Credentials"));
     setTimeout(() => {
