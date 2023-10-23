@@ -7,8 +7,12 @@ import { FormHelperText } from "@mui/material";
 import * as Yup from "yup";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from ".././firebase";
+import { auth, database } from ".././firebase";
 import { useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
+
+
+
 const Signup = () => {
   const [As, setAs] = React.useState("");
 
@@ -27,6 +31,9 @@ const Signup = () => {
     confirmPassword: "",
     termsAndConditions: false,
   };
+
+
+
   const validationSchema = Yup.object().shape({
     name: Yup.string().min(3, "It's too short").required("Required"),
     email: Yup.string().email("Enter valid email").required("Required"),
@@ -45,24 +52,43 @@ const Signup = () => {
       "Accept terms & conditions"
     ),
   });
+
+
+
   const navigate = useNavigate();
+  const UserRef = collection(database, "user");
   const onSubmit = (values, props) => {
-    console.log(values);
     //  console.log(props);
     createUserWithEmailAndPassword(auth, values.email, values.password).then(res => {
       //console.log(res);
       alert("Sign up successfully");
-      navigate('/home',{ replace: true });
+      navigate('/home', { replace: true });
       const user = res.user;
+      try {
+        addDoc(UserRef, {
+          Name: values.name,
+          Email: values.email,
+          Address: values.address,
+          phoneNumber: values.phoneNumber,
+          signInType: As,
+          UID: user.uid,
+        });
+      }
+
+
+      catch { alert("Invalid Credentials") };
       updateProfile(user, {
         displayName: values.name,
       });
-    }).catch((err) => alert("Error-", ErrorMessage));
+      console.log(values);
+    }).catch((err) => alert("Invalid Credentials"));
     setTimeout(() => {
       props.resetForm();
       props.setSubmitting(false);
     }, 2000);
   };
+
+
   return (
     <Grid>
       <Paper style={paperStyle}>
@@ -107,6 +133,7 @@ const Signup = () => {
                 placeholder="Enter your phone number"
                 helperText={<ErrorMessage name="phoneNumber" />}
               />
+
               <Field
                 as={TextField}
                 fullWidth
@@ -115,6 +142,7 @@ const Signup = () => {
                 placeholder="Enter your Address"
                 helperText={<ErrorMessage name="address" />}
               />
+
               <FormControl
                 sx={{ m: 0, minWidth: 260, marginBottom: 0.4 }}
                 size="medium"
@@ -129,9 +157,9 @@ const Signup = () => {
                   label="As"
                   onChange={handleChange}
                 >
-                  <MenuItem value={10}>Locality Member</MenuItem>
-                  <MenuItem value={20}>Community</MenuItem>
-                  <MenuItem value={30}>Government Official</MenuItem>
+                  <MenuItem value={'Locality Member'}>Locality Member</MenuItem>
+                  <MenuItem value={'Community'}>Community</MenuItem>
+                  <MenuItem value={'Government Official'}>Government Official</MenuItem>
                 </Select>
               </FormControl>
               <Field
