@@ -1,13 +1,13 @@
 import React from "react";
-
+import BackImg from './back.jpg'
 const Left = () => {
   const cardStyles = {
     position: "fixed",
     top: "54%", // Position in the middle vertically
-    right: "50px", // Adjust the right position as needed
+    right: "5em", // Adjust the right position as needed
     transform: "translate(0, -50%)", // Center vertically    // Adjust the left position as needed
-    width: "450px",
-    height: "500px",
+    width: "400px",
+    height: "450px",
     backgroundColor: "#B2533E",
     boxShadow: "100px 50px 6px rgba(0, 0, 0, 0.2)",
     padding: "20px",
@@ -15,12 +15,15 @@ const Left = () => {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    backgroundImage: `url(${BackImg})`,
+    backgroundSize: 'cover',
   };
   const styleh = {
     textAlign: "center",
-    marginBottom: "20px",
-    fontSize: "50px",
+    marginBottom: "0.3em",
+    fontSize: "3em",
     fontFamily: 'Amatic SC, cursive',
+    color:"#d9c9ee",
 
   };
   const styled = {
