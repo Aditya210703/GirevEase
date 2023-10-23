@@ -7,7 +7,7 @@ import MessageIcon from '@mui/icons-material/Message';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 const headerStyle = {
-    height: '6vh',
+    height: '8vh',
     backgroundColor: 'rgba(255,255,255,0.7)',
     color: '#fff',
     padding: '1rem',
@@ -15,7 +15,7 @@ const headerStyle = {
     justifyContent: 'space-between',
     alignItems: 'center',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-    borderRadius: '10px',
+    
     zIndex: 1
   };
   
@@ -44,7 +44,7 @@ const searchContainerStyle = {
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', 
     padding: '12px', 
     width: '40%',
-    height: '3vh'
+    height: '2em'
   };
   
   const searchInputStyle = {
