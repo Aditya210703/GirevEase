@@ -81,7 +81,7 @@ const Header = () => {
       </div>
 
       <div className={styles.searchContainer}>
-        <input type="text" placeholder="Type here to Search..." className={styles.searchInput} />
+        <input type="text" placeholder="Type here to Search..." className={`${styles.searchInput} ${styles.navSearch}`} />
         <button className={styles.searchButton}><SearchIcon /></button>
       </div>
 
