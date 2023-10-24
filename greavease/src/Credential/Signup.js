@@ -74,8 +74,6 @@ const Signup = () => {
           UID: user.uid,
         });
       }
-
-
       catch { alert("Invalid Credentials") };
       updateProfile(user, {
         displayName: values.name,
