@@ -10,7 +10,7 @@ import styles from './header.module.css';
 import { auth, database } from '../../firebase'
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
-
+import LogoutIcon from '@mui/icons-material/Logout';
 // auth data-------
 const fetchUserNameFromFirestore = async () => {
   try {
@@ -85,7 +85,7 @@ const Header = () => {
       <div className={styles.iconsContainer}>
         <button className={styles.iconButton}><HomeIcon /></button>
         <button className={styles.iconButton}><GroupsIcon /></button>
-        <button className={styles.iconButton}><GroupsIcon /></button>
+        {/* <button className={styles.iconButton}><GroupsIcon /></button> */}
       </div>
 
       <div className={styles.searchContainer}>
@@ -94,8 +94,8 @@ const Header = () => {
       </div>
 
       <div className={styles.iconsContainer}>
-        <button className={styles.iconButton}><MessageIcon /></button>
-        <button className={styles.iconButton}><NotificationsIcon /></button>
+        <button className={styles.iconButton}><LogoutIcon/></button>
+        {/* <button className={styles.iconButton}><NotificationsIcon /></button> */}
         <button className={styles.iconButton}><ProfileIcon /></button>
         <span className={styles.profileName}>{userName}</span>
         <div className={styles.profileCard}>
