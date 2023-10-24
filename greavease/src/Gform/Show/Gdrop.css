@@ -1,0 +1,47 @@
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.gdrop-card {
+    background-color: rgba(239, 187, 138,0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    min-width: 50px;
+    max-width: 40em;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    max-height: 500px;
+    min-height: 50px;
+}
+
+.gdrop-card-header > img {
+    width: 100%;
+    /* padding-bottom: 2em; */
+    border-radius: 5%;
+}
+::-webkit-scrollbar{
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+}
+.gdrop-content01{
+    color: rgb(83, 32, 3);
+    font-size: 1.8em;
+    text-align: center;
+    margin:  0.8em 0em;
+}
+
+.gdrop-content {
+    color: rgb(83, 32, 3);
+    font-size: 1.5em;
+   
+}
