@@ -11,6 +11,9 @@ import { auth, database } from '../../firebase'
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import LogoutIcon from '@mui/icons-material/Logout';
+
+
+
 // auth data-------
 const fetchUserNameFromFirestore = async () => {
   try {
@@ -75,6 +78,12 @@ const Header = () => {
     }
   }, []);
 
+
+
+  function handleLogout() {
+    auth.signOut()
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.logocontainer}>
@@ -94,7 +103,7 @@ const Header = () => {
       </div>
 
       <div className={styles.iconsContainer}>
-        <button className={styles.iconButton}><LogoutIcon/></button>
+        <button className={styles.iconButton} onClick={handleLogout} ><LogoutIcon/></button>
         {/* <button className={styles.iconButton}><NotificationsIcon /></button> */}
         <button className={styles.iconButton}><ProfileIcon /></button>
         <span className={styles.profileName}>{userName}</span>
