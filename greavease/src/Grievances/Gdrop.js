@@ -10,7 +10,7 @@ const Gdrop = (props) => {
           <div className="backdrop" onClick={props.closeBackdrop}>
             <div className="gdrop-card">
               <div className="gdrop-card-header">
-                <img src={props.imageUrl} alt="Card Header Image" />
+                <img src={props.imageUrl} alt="Card Header Image" className="GrievanceImage"/>
               </div>
               <div className="gdrop-content01">Description of Grievance:</div>
               <div className="gdrop-content">{props.description}</div>

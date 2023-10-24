@@ -6,13 +6,13 @@ const Center = () => {
   
   return (
     <div>
-        <div className="cnte">
+        
       
       {/* <CardComponent></CardComponent> */}
-      <ShowGriev></ShowGriev>
+      {/* <ShowGriev></ShowGriev> */}
     </div>
     
-    </div>
+    
     
   );
 };
