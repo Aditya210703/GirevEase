@@ -82,4 +82,72 @@
       background-color: red;
       color: black;
   }
+
+  .profileCard {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 2;
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .updateProfile h2 {
+    margin-top: 10px;
+    color: #200904;
+  }
+  
+  .updateProfile {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .formGroup {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .updateProfile label {
+    display: block;
+    margin-bottom: 0;
+    color: #B2533E;
+    font-size: 1rem;
+  }
+  
+  .updateProfile input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 245);
+  }
+  
+  .updateButton {
+    background-color: #B2533E;
+    color: white;
+    padding: 5px 16px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    align-items: center;
+    width: auto;
+    height: 2em;
+    display: inline-block;
+  }
+  
   

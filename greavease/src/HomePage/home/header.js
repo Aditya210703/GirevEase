@@ -48,6 +48,14 @@ const fetchUserNameFromFirestore = async () => {
 //-----------------
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    setOpen((prevOpen) => !prevOpen);
+  }
+  const handleSubmit =() => {
+    console.log("form submitted!");
+  }
   const [userName, setUserName] = useState('');
 
   useEffect(() => {
@@ -90,7 +98,31 @@ const Header = () => {
         <button className={styles.iconButton}><NotificationsIcon /></button>
         <button className={styles.iconButton}><ProfileIcon /></button>
         <span className={styles.profileName}>{userName}</span>
-        <button className={styles.iconButton}><ArrowDropDownIcon /></button>
+        <div className={styles.profileCard}>
+        <button className={styles.iconButton} onClick={handleButtonClick}><ArrowDropDownIcon /></button>
+        { open && 
+        (<div className={styles.dropdown}>
+          <div className={styles.updateProfile}>
+           <h2>Update Profile</h2>
+         <form onSubmit={handleSubmit}>
+           <div className={styles.formGroup}>
+          <label htmlFor="name">Name:</label>
+          <input type="text" id="name" name="name" />
+          </div>
+           <div className={styles.formGroup}>
+           <label htmlFor="phoneNumber">Phone Number:</label>
+           <input type="text" id="phoneNumber" name="phoneNumber" />
+          </div>
+          <div className={styles.formGroup}>
+           <label htmlFor="address">Address:</label>
+           <input type="text" id="address" name="address" />
+         </div>
+        <button type="submit" className={styles.updateButton}>Update Details</button>
+    </form>
+          </div>
+        </div>
+        )}
+        </div>
       </div>
     </header>
   );
