@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Gform.css";
-import { collection, addDoc } from "firebase/firestore";
-import { database } from ".././firebase";
+import { collection, addDoc, query } from "firebase/firestore";
+import { auth, database } from ".././firebase";
 const GrievancesRef = collection(database, "grievances");
 
 class FormComponent extends Component {
@@ -49,6 +49,7 @@ class FormComponent extends Component {
         department: this.state.selectedOption,
         description: this.state.description,
         phoneNumber: this.state.countryCode + this.state.phoneNumber,
+        uid:auth.currentUser.uid
       });
       alert("Form submitted successfully");
     } catch (error) {
