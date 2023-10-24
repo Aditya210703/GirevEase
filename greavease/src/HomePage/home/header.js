@@ -10,7 +10,7 @@ import styles from './header.module.css';
 import { auth, database } from '../../firebase'
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
-
+import LogoutIcon from '@mui/icons-material/Logout';
 // auth data-------
 const fetchUserNameFromFirestore = async () => {
   try {
@@ -48,6 +48,14 @@ const fetchUserNameFromFirestore = async () => {
 //-----------------
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    setOpen((prevOpen) => !prevOpen);
+  }
+  const handleSubmit =() => {
+    console.log("form submitted!");
+  }
   const [userName, setUserName] = useState('');
 
   useEffect(() => {
@@ -77,20 +85,44 @@ const Header = () => {
       <div className={styles.iconsContainer}>
         <button className={styles.iconButton}><HomeIcon /></button>
         <button className={styles.iconButton}><GroupsIcon /></button>
-        <button className={styles.iconButton}><GroupsIcon /></button>
+        {/* <button className={styles.iconButton}><GroupsIcon /></button> */}
       </div>
 
       <div className={styles.searchContainer}>
-        <input type="text" placeholder="Type here to Search..." className={styles.searchInput} />
+        <input type="text" placeholder="Type here to Search..." className={`${styles.searchInput} ${styles.navSearch}`} />
         <button className={styles.searchButton}><SearchIcon /></button>
       </div>
 
       <div className={styles.iconsContainer}>
-        <button className={styles.iconButton}><MessageIcon /></button>
-        <button className={styles.iconButton}><NotificationsIcon /></button>
+        <button className={styles.iconButton}><LogoutIcon/></button>
+        {/* <button className={styles.iconButton}><NotificationsIcon /></button> */}
         <button className={styles.iconButton}><ProfileIcon /></button>
         <span className={styles.profileName}>{userName}</span>
-        <button className={styles.iconButton}><ArrowDropDownIcon /></button>
+        <div className={styles.profileCard}>
+        <button className={styles.iconButton} onClick={handleButtonClick}><ArrowDropDownIcon /></button>
+        { open && 
+        (<div className={styles.dropdown}>
+          <div className={styles.updateProfile}>
+           <h2>Update Profile</h2>
+         <form onSubmit={handleSubmit}>
+           <div className={styles.formGroup}>
+          <label htmlFor="name">Name:</label>
+          <input type="text" id="name" name="name" />
+          </div>
+           <div className={styles.formGroup}>
+           <label htmlFor="phoneNumber">Phone Number:</label>
+           <input type="text" id="phoneNumber" name="phoneNumber" />
+          </div>
+          <div className={styles.formGroup}>
+           <label htmlFor="address">Address:</label>
+           <input type="text" id="address" name="address" />
+         </div>
+        <button type="submit" className={styles.updateButton}>Update Details</button>
+    </form>
+          </div>
+        </div>
+        )}
+        </div>
       </div>
     </header>
   );

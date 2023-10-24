@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import "./Gform.css";
+import { collection, addDoc, query } from "firebase/firestore";
+import { auth, database } from ".././firebase";
+const GrievancesRef = collection(database, "grievances");
 
 class FormComponent extends Component {
   constructor(props) {
@@ -13,7 +16,7 @@ class FormComponent extends Component {
       city: "",
       state: "",
       description: "",
-      selectedOption: "Choose The Department", // Default selected option
+      selectedOption: "Miscellaneous",
       countryCode: "+91",
       phoneNumber: "",
       image: null,
@@ -33,10 +36,25 @@ class FormComponent extends Component {
     this.setState({ image: e.target.files[0] });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", this.state);
-    // You can add code to handle form submission here
+    console.log(this.state);
+    try {
+      await addDoc(GrievancesRef, {
+        name: this.state.firstName + " " + this.state.lastName,
+        street: this.state.street,
+        locality: this.state.locality,
+        city: this.state.city,
+        state: this.state.state,
+        department: this.state.selectedOption,
+        description: this.state.description,
+        phoneNumber: this.state.countryCode + this.state.phoneNumber,
+        uid:auth.currentUser.uid
+      });
+      alert("Form submitted successfully");
+    } catch (error) {
+      alert("An error occurred: " + error.message);
+    }
   };
 
   render() {
@@ -130,44 +148,41 @@ class FormComponent extends Component {
             Choose an Option:
             <select
               name="selectedOption"
-              placeholder="Choose The Department"
               value={this.state.selectedOption}
               onChange={this.handleSelectChange}
             >
               <option value="Miscellaneous">Choose The Department</option>
-              <option value="Water Works">Water Works</option>
+              <option value="Water-Works">Water Works</option>
               <option value="Electricity">Electricity</option>
               <option value="RoadWays">RoadWays</option>
               <option value="Law-Enforcement">Law-Enforcement</option>
               <option value="Judicial">Judicial</option>
               <option value="Miscellaneous">Miscellaneous</option>
-              
             </select>
           </label>
           <br />
 
           <label htmlFor="phoneNumber">Phone Number:</label>
-            <div className="phone-input-container">
-              <input
-                type="tel"
-                id="countryCode"
-                name="countryCode"
-                value={this.state.countryCode}
-                onChange={this.handleInputChange}
-                placeholder="+91"
-                className="country-code-input"
-              />
-              <input
-                type="tel"
-                id="phoneNumber"
-                name="phoneNumber"
-                value={this.state.phoneNumber}
-                onChange={this.handleInputChange}
-                placeholder="Enter your mobile number"
-                className="phone-input"
-              />
-            </div>
-          
+          <div className="phone-input-container">
+            <input
+              type="tel"
+              id="countryCode"
+              name="countryCode"
+              value={this.state.countryCode}
+              onChange={this.handleInputChange}
+              placeholder="+91"
+              className="country-code-input"
+            />
+            <input
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+              value={this.state.phoneNumber}
+              onChange={this.handleInputChange}
+              placeholder="Enter your mobile number"
+              className="phone-input"
+            />
+          </div>
 
           <br />
 
@@ -186,7 +201,9 @@ class FormComponent extends Component {
           <br />
 
           <div className="button-container">
-            <button type="submit" className="Gbutton" >Submit</button>
+            <button type="submit" className="Gbutton">
+              Submit
+            </button>
           </div>
         </form>
       </div>
