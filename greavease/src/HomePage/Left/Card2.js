@@ -2,31 +2,41 @@ import React from "react";
 import "./Card2.css";
 import Card201 from "./Card201";
 import img1 from "./new1.png";
-import img2 from "./inyourarea.jpg";
-import img3 from "./solved.jpg";
+import img4 from "./inyourarea.jpg";
+import img5 from "./solved.jpg";
+import img2 from "./left_bottom/Reported.png"
+import img3 from './Your.png'
 const Card2 = () => {
   const data = [
     {
-      text: "Register",
+      text: "Register New",
       imgurl: img1,
     },
     {
-      text: "In your Area",
+      text: "Grievance Reported",
       imgurl: img2,
     },
     {
-      text: "Solved",
+      text: "Your Grievance",
       imgurl: img3,
+    },
+    {
+      text: "In your Area",
+      imgurl: img4,
+    },
+    {
+      text: "Solved",
+      imgurl: img5,
     },
   ];
   return (
     <div className="card2">
       <div className="card2-content">
         <Card201 name={data[0].text} imgurl={data[0].imgurl}></Card201>
-        <Card201 name={data[0].text} imgurl={data[0].imgurl}></Card201>
-        <Card201 name={data[0].text} imgurl={data[0].imgurl}></Card201>
         <Card201 name={data[1].text} imgurl={data[1].imgurl}></Card201>
         <Card201 name={data[2].text} imgurl={data[2].imgurl}></Card201>
+        <Card201 name={data[3].text} imgurl={data[3].imgurl}></Card201>
+        <Card201 name={data[4].text} imgurl={data[4].imgurl}></Card201>
       </div>
     </div>
   );

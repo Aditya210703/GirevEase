@@ -24,6 +24,7 @@
     align-items: center;
     width: 100%;
     padding: 0px;
+    height: 100%;
     /* overflow: hidden; */
   }
   
@@ -35,6 +36,9 @@
     border-radius: 10%;
     margin: .35 .15em;
     justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .name2 {

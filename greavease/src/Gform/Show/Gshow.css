@@ -1,0 +1,70 @@
+.GrievShowButton {
+  background-color: rgba(255, 255, 255, 0.2);
+
+  border-radius: 8px;
+  height: 4em;
+  overflow: hidden;
+  padding: auto;
+  margin: 0.25em 0;
+  width: 100%;
+  border-width: 0;
+  backdrop-filter: blur(10px); /* Apply the background blur */
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.GrievShowButton:hover {
+  cursor: pointer;
+  box-shadow: 0 2px 5px #6c3428;
+}
+
+.GrievShowDiv {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  position: relative;
+  overflow: visible;
+  height: 4em;
+  padding: 0;
+}
+.GrievShowSpan1 {
+  height: 4em;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:10%;
+}
+.GrievShowSpan2 {
+    height: 4em;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+  }
+  .GrievShowSpan3 {
+    height: 4em;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+  }
+  .GrievShowSpan4 {
+    height: 4em;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+  }
+
+.inner_span{
+    height:3em;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  padding: 0;
+}
