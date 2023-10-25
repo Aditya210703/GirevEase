@@ -1,88 +1,118 @@
-import logoImage from './Mask group.png'
+import React, { useState, useEffect } from 'react';
+import { auth, database } from '../../firebase';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { updateDoc } from 'firebase/firestore';
+import logoImage from './Mask group.png';
 import ProfileIcon from '@mui/icons-material/AccountCircle';
 import HomeIcon from '@mui/icons-material/Home';
 import GroupsIcon from '@mui/icons-material/Groups';
 import SearchIcon from '@mui/icons-material/Search';
-import MessageIcon from '@mui/icons-material/Message';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+// import MessageIcon from '@mui/icons-material/Message';
+// import NotificationsIcon from '@mui/icons-material/Notifications';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import styles from './header.module.css';
-import { auth, database } from '../../firebase'
-import { collection, getDocs, query, where } from 'firebase/firestore';
-import React, { useEffect, useState } from 'react';
 import LogoutIcon from '@mui/icons-material/Logout';
-
-
-
-// auth data-------
-const fetchUserNameFromFirestore = async () => {
-  try {
-    // Get the currently authenticated user
-    const user = auth.currentUser;
-
-    if (user) {
-      const userCollection = collection(database, 'user');
-
-      const q = query(userCollection, where('UID', '==', user.uid));
-
-      // Fetch the data using the query
-      const querySnapshot = await getDocs(q);
-
-      // Extract the user's name from the document
-      if (querySnapshot.size > 0) {
-        const doc = querySnapshot.docs[0];
-        const userData = doc.data();
-        const userName = userData.Name;
-        return userName; // Return the user's name
-      } else {
-        throw new Error('User document not found in Firestore.');
-      }
-    } else {
-      throw new Error('User is not authenticated.');
-    }
-  } catch (error) {
-    console.error('Error fetching user name from Firestore:', error);
-    throw error;
-  }
-};
-// };
-
-
-//-----------------
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [userData, setUserData] = useState({
+    Name: '',
+    Email: '',
+    phoneNumber: '',
+    Address: ''
+  });
+  const [formData, setFormData] = useState({
+    Name: '',
+    phoneNumber: '',
+    Address: ''
+  });
 
-  const handleButtonClick = () => {
-    setOpen((prevOpen) => !prevOpen);
-  }
-  const handleSubmit =() => {
-    console.log("form submitted!");
-  }
-  const [userName, setUserName] = useState('');
 
   useEffect(() => {
-    const fetchUserName = async () => {
+    const fetchUserDetails = async () => {
       try {
-        const name = await fetchUserNameFromFirestore();
-        setUserName(name);
+        const user = await fetchUserDataFromFirestore();
+        setUserData(user);
       } catch (error) {
-        console.error('Error fetching user name:', error);
+        console.error('Error fetching user data:', error);
       }
     };
 
-    // Check if the user is authenticated before fetching the name
     const user = auth.currentUser;
     if (user) {
-      fetchUserName();
+      fetchUserDetails();
     }
   }, []);
 
+  const fetchUserDataFromFirestore = async () => {
+    try {
+      const user = auth.currentUser;
+  
+      if (user) {
+        const userDataCollection = 'user';
+        const userCollection = collection(database, userDataCollection);
+  
+        const q = query(userCollection, where('UID', '==', user.uid));
+  
+        // Fetch the data using the query
+        const querySnapshot = await getDocs(q);
+  
+        if (querySnapshot.size > 0) {
+          const doc = querySnapshot.docs[0];
+          const userData = doc.data();
+          return userData; // Return the user's data as a map
+        } else {
+          throw new Error('User document not found in Firestore.');
+        }
+      } else {
+        throw new Error('User is not authenticated.');
+      }
+    } catch (error) {
+      console.error('Error fetching user data from Firestore:', error);
+      throw error;
+    }
+  };
 
+  const handleLogout = () => {
+    auth.signOut();
+  };
 
-  function handleLogout() {
-    auth.signOut()
-  }
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if(formData.Name===''){
+      formData.Name = userData.Name;
+    }
+    if(formData.phoneNumber===''){
+      formData.phoneNumber = userData.phoneNumber;
+    }
+    if(formData.Address===''){
+      formData.Address = userData.Address;
+    }
+    console.log(formData);
+    try{
+    const userDataCollection = 'user';
+    const userCollection = collection(database, userDataCollection);
+    const user = auth.currentUser;
+    const q = query(userCollection, where('UID', '==', user.uid));
+    const querySnapshot = await getDocs(q);
+    const docRef = querySnapshot.docs[0].ref;
+    await updateDoc(docRef, formData);
+    }
+    catch{
+      console.error('error');
+    }
+    setOpen(false);
+    window.location.reload();
+  };
+
+  const handleButtonClick = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
 
   return (
     <header className={styles.header}>
@@ -103,34 +133,57 @@ const Header = () => {
       </div>
 
       <div className={styles.iconsContainer}>
-        <button className={styles.iconButton} onClick={handleLogout} ><LogoutIcon/></button>
+        <button className={styles.iconButton} onClick={handleLogout} ><LogoutIcon /></button>
         {/* <button className={styles.iconButton}><NotificationsIcon /></button> */}
         <button className={styles.iconButton}><ProfileIcon /></button>
-        <span className={styles.profileName}>{userName}</span>
+        <span className={styles.profileName}>{userData.Name}</span>
         <div className={styles.profileCard}>
-        <button className={styles.iconButton} onClick={handleButtonClick}><ArrowDropDownIcon /></button>
-        { open && 
-        (<div className={styles.dropdown}>
-          <div className={styles.updateProfile}>
-           <h2>Update Profile</h2>
-         <form onSubmit={handleSubmit}>
-           <div className={styles.formGroup}>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" />
-          </div>
-           <div className={styles.formGroup}>
-           <label htmlFor="phoneNumber">Phone Number:</label>
-           <input type="text" id="phoneNumber" name="phoneNumber" />
-          </div>
-          <div className={styles.formGroup}>
-           <label htmlFor="address">Address:</label>
-           <input type="text" id="address" name="address" />
-         </div>
-        <button type="submit" className={styles.updateButton}>Update Details</button>
-    </form>
-          </div>
-        </div>
-        )}
+          <button className={styles.iconButton} onClick={handleButtonClick}><ArrowDropDownIcon /></button>
+          {open && (
+            <div className={styles.dropdown}>
+              <div className={styles.updateProfile}>
+                <h2>Update Profile</h2>
+                <form onSubmit={handleSubmit}>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="Name">Name:</label>
+                    <input
+                      type="text"
+                      id="Name"
+                      name="Name"
+                      placeholder={userData.Name}
+                      value={formData.Name}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="phoneNumber">Phone Number:</label>
+                    <input
+                      placeholder={userData.phoneNumber}
+                      type="text"
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="Address">Address:</label>
+                    <input
+                      placeholder={userData.Address}
+                      type="text"
+                      id="Address"
+                      name="Address"
+                      value={formData.Address}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <button type="submit" className={styles.updateButton}>
+                    Update Details
+                  </button>
+                </form>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </header>
