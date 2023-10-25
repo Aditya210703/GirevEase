@@ -5,6 +5,7 @@ import Merge from './Credential/merge';
 import Final from './HomePage/Final'
 import CardComponent from './Gform/Gcard';
 import ShowGriev from './Grievances/Showdata';
+import Rules from './Rules/rules';
 function App() {
   return (
 
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/home" element={<Final />}>
           <Route exact path="/home/Gform"  element={<CardComponent/>}/>
           <Route exact path="/home/GrievanceShow"  element={<ShowGriev/>}/>
+          <Route exact path="/home/Rules" element={<Rules />}/>
         </Route>
       </Routes>
     </div>
