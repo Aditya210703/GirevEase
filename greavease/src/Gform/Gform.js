@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Gform.css";
-import { collection, addDoc, query } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { auth, database } from ".././firebase";
 const GrievancesRef = collection(database, "grievances");
 
@@ -52,6 +52,7 @@ class FormComponent extends Component {
         uid:auth.currentUser.uid
       });
       alert("Form submitted successfully");
+      window.location.reload();
     } catch (error) {
       alert("An error occurred: " + error.message);
     }
@@ -66,6 +67,7 @@ class FormComponent extends Component {
               <label>
                 First Name:
                 <input
+                  required
                   type="text"
                   name="firstName"
                   value={this.state.firstName}
@@ -77,6 +79,7 @@ class FormComponent extends Component {
               <label>
                 Last Name:
                 <input
+                  required
                   className="inp"
                   type="text"
                   name="lastName"
@@ -92,6 +95,7 @@ class FormComponent extends Component {
           <label>
             Street:
             <input
+            required
               type="text"
               name="street"
               value={this.state.street}
@@ -103,6 +107,7 @@ class FormComponent extends Component {
           <label>
             Locality:
             <input
+            required
               type="text"
               name="locality"
               value={this.state.locality}
@@ -114,6 +119,7 @@ class FormComponent extends Component {
           <label>
             City:
             <input
+            required
               type="text"
               name="city"
               value={this.state.city}
@@ -125,6 +131,7 @@ class FormComponent extends Component {
           <label>
             State:
             <input
+            required
               type="text"
               name="state"
               value={this.state.state}
@@ -136,6 +143,7 @@ class FormComponent extends Component {
           <label>
             Describe Your Case:
             <textarea
+            required
               name="description"
               value={this.state.description}
               onChange={this.handleInputChange}
@@ -147,6 +155,7 @@ class FormComponent extends Component {
           <label>
             Choose an Option:
             <select
+            required
               name="selectedOption"
               value={this.state.selectedOption}
               onChange={this.handleSelectChange}
@@ -165,6 +174,7 @@ class FormComponent extends Component {
           <label htmlFor="phoneNumber">Phone Number:</label>
           <div className="phone-input-container">
             <input
+            required
               type="tel"
               id="countryCode"
               name="countryCode"
@@ -174,6 +184,7 @@ class FormComponent extends Component {
               className="country-code-input"
             />
             <input
+            required
               type="tel"
               id="phoneNumber"
               name="phoneNumber"

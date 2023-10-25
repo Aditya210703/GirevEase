@@ -5,6 +5,7 @@ import Card2 from "../Left/Card2";
 import Upper from "../Right/upper";
 import Center from "../Center/Center";
 import Lower from "../Right/Lower";
+import { Outlet } from "react-router";
 
 const Home=()=>{
 return(
@@ -19,6 +20,7 @@ return(
         </div>
         <div className="middle">
         <Center></Center>
+        <Outlet></Outlet>
         </div>
         <div className="right">
             <Upper></Upper>
