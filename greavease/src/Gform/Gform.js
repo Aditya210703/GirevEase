@@ -52,6 +52,7 @@ class FormComponent extends Component {
         uid:auth.currentUser.uid
       });
       alert("Form submitted successfully");
+      window.location.reload();
     } catch (error) {
       alert("An error occurred: " + error.message);
     }
