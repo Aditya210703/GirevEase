@@ -13,7 +13,7 @@ In today's fast-paced world, where digital solutions are becoming an integral pa
 - [Technical Stack](#technical-stack)
     - [UI Design with Figma](#ui-design-with-figma)
     - [Front-End Development with React, HTML, and CSS](#front-end-development-with-react-html-and-css)
-    - [Back-End Development and Database Management with Firebase](#back-end-development-and-database-management-with-Firebase)
+    - [Back-End Development and Database Management with Firebase](#back-end-development-and-database-management-with-firebase)
     - [Installation of React Servers](#installation-of-react-servers)
 - [Getting Started](#getting-started)
 - [Frequently Asked Questions (FAQs)](#frequently-asked-questions-faqs)
@@ -52,7 +52,23 @@ Firebase provides a powerful NoSQL cloud database for both web and mobile applic
 Firebase's robust integration with Google's suite of products and services ensures advanced security measures and comprehensive tools for monitoring and troubleshooting.
 
 ### Installation of React Servers
-For those looking to set up React servers, a detailed guide is provided to ensure a hassle-free installation process.
+1. **Clone the repository:**
+   ```
+   https://github.com/Aditya210703/GirevEase.git
+   ```
+2. **Navigate to the project directory:**
+   ```
+   cd GirevEase
+   ```
+3. **Install project dependencies:**
+   ```
+   npm install
+   ```
+4. **Start the development server:**
+   ```
+   npm start
+   ```
+   This command will start the development server and open the app in your default web browser.
 
 ## Getting Started
 Are you ready to be a part of this transformative experience? Visit our portal, share your grievances, or lend a helping hand. Together, we can build a better community and foster a stronger connection between the public and the government.
@@ -65,7 +81,7 @@ To submit a grievance anonymously, follow these steps:
 2. Click on the "New Grievance" button.
 3. Choose the option for anonymous submission.
 4. Fill out the required details about your grievance.
-5. Submit your grievance without revealing your identity.
+5. Submit your grievance without revealing your identity choose "submit anonymously button" .
 
 ### How do community points work?
 Community points are earned when you actively participate in helping to resolve grievances or contributing to the community. The more you get involved, the more points you accumulate. These points can be displayed as a badge of honor on your profile.
