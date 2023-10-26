@@ -45,3 +45,39 @@
     font-size: 1.5em;
    
 }
+.gdrop-option{
+    display: flex;
+    justify-content: space-between;
+}
+.upvote {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.8em;
+  }
+span + .help {
+    margin-left: 60%;
+}
+.help {
+    background-color: rgb(83, 32, 3);
+    color: white;
+    padding: 5px 16px;
+    margin-top: 0.8em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    align-items: center;
+    width: auto;
+    height: 2em;
+    display: inline-block;
+}
+.close {
+    display: flex;
+    justify-content: flex-end;
+}
+.close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
