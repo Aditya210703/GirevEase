@@ -12,7 +12,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import styles from './header.module.css';
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import {Link} from 'react-router-dom';
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [userData, setUserData] = useState({
@@ -122,7 +122,7 @@ const Header = () => {
       </div>
 
       <div className={styles.iconsContainer}>
-        <button className={styles.iconButton}><HomeIcon /></button>
+        <Link to="/home"><button className={styles.iconButton}><HomeIcon /></button></Link>
         <button className={styles.iconButton}><GroupsIcon /></button>
         {/* <button className={styles.iconButton}><GroupsIcon /></button> */}
       </div>
