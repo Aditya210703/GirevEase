@@ -34,6 +34,7 @@
     justify-content: center;
     align-items: center;
     width:10%;
+    font-size: 0.8em;
   }
   .GrievShowSpan2 {
       height: 4em;
@@ -42,6 +43,7 @@
       justify-content: center;
       align-items: center;
       width: 30%;
+      font-size: 0.8em;
     }
     .GrievShowSpan3 {
       height: 4em;
@@ -50,6 +52,7 @@
       justify-content: center;
       align-items: center;
       width: 30%;
+      font-size: 0.8em;
     }
     .GrievShowSpan4 {
       height: 4em;
@@ -58,6 +61,7 @@
       justify-content: center;
       align-items: center;
       width: 30%;
+      font-size: 0.8em;
     }
   
   .inner_span{
