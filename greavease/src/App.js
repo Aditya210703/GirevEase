@@ -6,6 +6,7 @@ import Final from './HomePage/Final'
 import CardComponent from './Gform/Gcard';
 import ShowGriev from './Grievances/Showdata';
 import Rules from './Rules/rules';
+import YourGrievance from './YourGrievance/YourGrievance';
 function App() {
   return (
 
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/home/Gform"  element={<CardComponent/>}/>
           <Route exact path="/home/GrievanceShow"  element={<ShowGriev/>}/>
           <Route exact path="/home/Rules" element={<Rules />}/>
+          <Route exact path="/home/YourGrievance" element={<YourGrievance></YourGrievance>}/>
         </Route>
       </Routes>
     </div>
