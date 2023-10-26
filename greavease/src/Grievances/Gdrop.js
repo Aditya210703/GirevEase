@@ -7,8 +7,8 @@ const Gdrop = (props) => {
     const [count, setCount]=useState(0);
      
   const upvote = () =>{
-    console.log("hi");
-    setCount(prevCount => prevCount + 1)
+    setCount(count+1)
+    console.log(count);
   }
   const handleClose = () => {
     props.closeBackdrop();

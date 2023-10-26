@@ -1,0 +1,39 @@
+.pie-chart{
+    width:100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    z-index: 1000;
+}
+
+.LocalityHeading{
+    font-size: 1em;
+    color: #6c3428;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+.Locality{
+    width: 100%;
+    height:500px;
+    padding: 0 ;
+    margin: 0;
+    z-index: 110;
+    
+}
+.LocatlityHeadingIn{
+    font-size: 2.5em;
+}
+.PieChartLocality{
+    box-shadow: 0 2px 5px #6c3428  ;
+   height: 620px;
+   width: 100%;
+    border-radius: 5px;
+    z-index: 111;
+}
