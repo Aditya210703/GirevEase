@@ -8,6 +8,7 @@ import ShowGriev from './Grievances/Showdata';
 import Rules from './Rules/rules';
 import YourGrievance from './YourGrievance/YourGrievance';
 import PieChart from './InYourArea/PieChar';
+import About from './about/about';
 function App() {
   return (
 
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/home/Rules" element={<Rules />}/>
           <Route exact path="/home/InYourArea" element={<PieChart></PieChart>}/>
           <Route exact path="/home/YourGrievance" element={<YourGrievance></YourGrievance>}/>
+          <Route exact path="/home/about" element={<About />}/>
         </Route>
       </Routes>
     </div>

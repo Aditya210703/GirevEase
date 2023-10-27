@@ -30,8 +30,8 @@ const Gdrop = (props) => {
               <div className="gdrop-content01">Description of Grievance:</div>
               <div className="gdrop-content">{props.description}</div>
               <div className="gdrop-option">
-                <button className="upvote" onClick={upvote}><ThumbUpOffAltOutlinedIcon /></button>
-                <span>{count}</span>
+                <div><button className="upvote" onClick={upvote}><ThumbUpOffAltOutlinedIcon /></button>
+                <span>{count}</span></div>
                 <button className="help" onClick={handleHelp}>Help</button>
               </div>
             </div>
