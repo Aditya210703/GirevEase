@@ -14,11 +14,11 @@ const Lower = () => {
 
     const infodata = [
         {
-          text: "rules regarding grievances",
+          text: "Rules regarding Grievances",
           imgurl: Rules,
         },
         {
-          text: "process flow",
+          text: "Process Flow",
           imgurl: Process,
         },
         {
@@ -26,7 +26,7 @@ const Lower = () => {
           imgurl: Red,
         },
         {
-            text: "about us",
+            text: "About Us",
             imgurl: About,
           },
       ];

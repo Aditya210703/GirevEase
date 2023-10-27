@@ -6,7 +6,7 @@ import YourReport from "./YourReport";
 const YourGrievance = () => {
   return (
     <div className="ShowYourGrievance">
-      <div className="ShowYourGrievanceHeader">Your Grievances</div>
+      <div className="ShowYourGrievanceHeader">My Grievances</div>
       <YourReport></YourReport>
     </div>
   );

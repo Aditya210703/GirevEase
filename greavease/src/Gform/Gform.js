@@ -33,7 +33,7 @@ class FormComponent extends Component {
   };
 
   handleImageChange = (e) => {
-    this.setState({ image: e.target.files[0] });
+    this.setState({ image: e.target.value });
   };
 
   handleSubmit = async (e) => {
@@ -201,8 +201,8 @@ class FormComponent extends Component {
             Upload an Image:
             <div className="file-upload-container">
               <input
-                placeholder="Enter the supporting material"
-                type="file"
+                placeholder="Enter the Gdrive link of image"
+                type="text"
                 name="image"
                 onChange={this.handleImageChange}
               />
