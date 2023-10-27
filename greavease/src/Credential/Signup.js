@@ -136,8 +136,8 @@ const Signup = () => {
                 as={TextField}
                 fullWidth
                 name="address"
-                label="Address"
-                placeholder="Enter your Address"
+                label="Locality"
+                placeholder="Enter your Locality"
                 helperText={<ErrorMessage name="address" />}
               />
 

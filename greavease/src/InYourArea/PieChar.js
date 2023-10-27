@@ -13,7 +13,7 @@ function PieChart() {
 
       <div className="contentContainer">
         <p className="welcome-info">
-          <strong>Welcome to GrievEase!</strong><br />Checkout the grievances reported in your locality. You can now register your grievance by submitting the Grievance form.
+          Checkout the grievances reported in your locality. You can now register your grievance by submitting the Grievance form.
         </p>
       </div>
     </div>

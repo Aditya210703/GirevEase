@@ -10,6 +10,7 @@ import YourGrievance from './YourGrievance/YourGrievance';
 import PieChart from './InYourArea/PieChar';
 import About from './about/about';
 import Process from './process/process'
+import TotalGrievance from './TotalGrievancePieChart/TotalGrievances';
 function App() {
   return (
 
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/home/GrievanceShow"  element={<ShowGriev/>}/>
           <Route exact path="/home/Rules" element={<Rules />}/>
           <Route exact path="/home/InYourArea" element={<PieChart></PieChart>}/>
+          <Route exact path="/home/TotalGrievance" element={<TotalGrievance></TotalGrievance>}/>
           <Route exact path="/home/YourGrievance" element={<YourGrievance></YourGrievance>}/>
           <Route exact path="/home/about" element={<About />}/>
           <Route exact path="/home/process" element={<Process />} />

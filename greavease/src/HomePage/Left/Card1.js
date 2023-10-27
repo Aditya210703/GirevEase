@@ -26,7 +26,7 @@ const Card1 = () => {
       imgurl: law,
     },
     {
-      text: "Judicial",
+      text: "Waste",
       imgurl: jury,
     },
     {

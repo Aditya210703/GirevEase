@@ -46,8 +46,8 @@ const Card2 = () => {
         <Link to={"/home/InYourArea"}>
         <Card201 name={data[3].text} imgurl={data[3].imgurl}></Card201>
         </Link>
+        <Link to={"/home/TotalGrievance"}><Card201 name={data[4].text} imgurl={data[4].imgurl}></Card201></Link>
         
-        <Card201 name={data[4].text} imgurl={data[4].imgurl}></Card201>
       </div>
     </div>
   );
