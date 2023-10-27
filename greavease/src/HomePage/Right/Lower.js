@@ -39,7 +39,8 @@ const Lower = () => {
           <Link to='/home/Rules'>
             <LowerIn name={infodata[0].text} imgurl={infodata[0].imgurl} ></LowerIn>
           </Link>
-          <LowerIn name={infodata[1].text} imgurl={infodata[1].imgurl} ></LowerIn>
+          <Link to= '/home/process'><LowerIn name={infodata[1].text} imgurl={infodata[1].imgurl} ></LowerIn>
+          </Link>
           <LowerIn name={infodata[2].text} imgurl={infodata[2].imgurl} ></LowerIn>
           <Link to='/home/About'><LowerIn name={infodata[3].text} imgurl={infodata[3].imgurl} ></LowerIn></Link>
         </div>

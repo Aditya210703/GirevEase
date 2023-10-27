@@ -82,3 +82,9 @@ span + .help {
     border: none;
     cursor: pointer;
 }
+.upvote-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid rgb(83, 32, 3);
+    border-radius: 5px;
+}
