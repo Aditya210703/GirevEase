@@ -31,7 +31,7 @@ const ReportData = () => {
     width: "100%",
     borderWidth: "0",
     display: "flex",
-    justifyContent: "center" /* Horizontal centering */,
+    justifyContent: "center",
     alignItems: "center",
     fontSize: "4em",
     color: "#B2533E",
@@ -45,12 +45,13 @@ const ReportData = () => {
       <div className="Show_Card_Body">
         {grievanceData.map((grievance, index) => (
           <GrievShow
-            key={grievance.id}
+            gid={grievance.id}
             id={index + 1}
             Department={grievance.department}
             Locality={grievance.locality}
             By={grievance.name}
             Description={grievance.description}
+            Upvotes = {grievance.Upvotes}
             DESIMG={null}
           />
         ))}

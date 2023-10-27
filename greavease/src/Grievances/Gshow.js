@@ -10,6 +10,8 @@ const GrievShow = (props) => {
         <Gdrop
           imageUrl={props.DESIMG}
           description={props.Description}
+          gid = {props.gid}
+          Upvotes = {props.Upvotes}
           closeBackdrop={() => {
             setShowCard(false);
           }}
