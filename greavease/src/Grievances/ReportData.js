@@ -20,9 +20,26 @@ const ReportData = () => {
   useEffect(() => {
     fetchGrievanceData();
   }, []);
+  const ifnotfound = {
+    backgroundColor: " rgba(255, 255, 255, 0)",
+
+    borderRadius: "8px",
+    height: "4em",
+    overflow: "hidden",
+    padding: "auto",
+    margin: "0.25em 0",
+    width: "100%",
+    borderWidth: "0",
+    display: "flex",
+    justifyContent: "center" /* Horizontal centering */,
+    alignItems: "center",
+    fontSize: "4em",
+    color: "#B2533E",
+    fontWeight: "bold",
+  };
 
   if (grievanceData.length === 0) {
-    return <div>No Grievance Reported</div>;
+    return <div style={ifnotfound}>No Grievance Reported</div>;
   } else {
     return (
       <div className="Show_Card_Body">
