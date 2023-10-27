@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Gform.css";
-import { collection, addDoc } from "firebase/firestore";
+import { serverTimestamp, collection, addDoc } from "firebase/firestore";
 import { auth, database } from ".././firebase";
 const GrievancesRef = collection(database, "grievances");
 
@@ -21,6 +21,7 @@ class FormComponent extends Component {
       phoneNumber: "",
       image: null,
       Upvotes: 0,
+      timestamp: "",
     };
   }
 
@@ -51,7 +52,8 @@ class FormComponent extends Component {
         description: this.state.description,
         phoneNumber: this.state.countryCode + this.state.phoneNumber,
         uid:auth.currentUser.uid,
-        Upvotes: 0
+        Upvotes: 0,
+        timestamp: serverTimestamp(),
       });
       alert("Form submitted successfully");
       window.location.reload();

@@ -1,14 +1,14 @@
 import "./ShowData.css";
 import GrievShow from "./Gshow";
 import { database } from "../firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 
 const ReportData = () => {
   const [grievanceData, setGrievanceData] = useState([]);
 
   const fetchGrievanceData = async () => {
-    const userCollections = collection(database, "grievances");
+    const userCollections = collection(database, "grievances", orderBy('timestamp', 'desc'));
     const data = await getDocs(userCollections);
     const fil = data.docs.map((doc) => ({
       ...doc.data(),
