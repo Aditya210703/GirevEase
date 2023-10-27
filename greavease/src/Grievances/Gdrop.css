@@ -16,6 +16,7 @@
     border-radius: 20px;
     padding: 2rem;
     min-width: 50px;
+    width: 40em;
     max-width: 40em;
     display: flex;
     flex-direction: column;
