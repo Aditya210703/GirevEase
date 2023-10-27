@@ -13,7 +13,10 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import styles from './header.module.css';
 import LogoutIcon from '@mui/icons-material/Logout';
 import {Link} from 'react-router-dom';
+import DiamondIcon from '@mui/icons-material/Diamond';
 const Header = () => {
+  const [credit, setCredit] = useState(10);
+
   const [open, setOpen] = useState(false);
   const [userData, setUserData] = useState({
     Name: '',
@@ -133,6 +136,8 @@ const Header = () => {
       </div>
 
       <div className={styles.iconsContainer}>
+        <button className={styles.iconButton}><DiamondIcon /></button>
+        <span className={styles.credit}>{credit}</span>
         <button className={styles.iconButton} onClick={handleLogout} ><LogoutIcon /></button>
         {/* <button className={styles.iconButton}><NotificationsIcon /></button> */}
         <button className={styles.iconButton}><ProfileIcon /></button>
