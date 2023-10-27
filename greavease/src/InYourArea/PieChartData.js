@@ -67,7 +67,7 @@ const PieChartData = () => {
   return (
     <div className="pie-chart">
       <Doughnut data={chartData} />
-      <p>Total Grievances: {totalGrievances}</p>
+      <p className='total'>Total Grievances: {totalGrievances}</p>
     </div>
   );
 };
