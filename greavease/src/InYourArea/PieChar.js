@@ -4,7 +4,7 @@ import "./PieChartData.css";
 function PieChart() {
   return (
     <div className="PieChartLocality">
-      <div className="chartConatiner">
+      <div className="chartContainer">
       <header className="LocalityHeading">
         <h1 className="LocatlityHeadingIn">In Your Locality</h1>
       </header>
