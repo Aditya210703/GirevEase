@@ -38,7 +38,7 @@ class FormComponent extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
     try {
       await addDoc(GrievancesRef, {
         name: this.state.firstName + " " + this.state.lastName,
@@ -165,7 +165,7 @@ class FormComponent extends Component {
               <option value="Electricity">Electricity</option>
               <option value="RoadWays">RoadWays</option>
               <option value="Law-Enforcement">Law-Enforcement</option>
-              <option value="Judicial">Judicial</option>
+              <option value="Waste">Judicial</option>
               <option value="Miscellaneous">Miscellaneous</option>
             </select>
           </label>

@@ -12,7 +12,6 @@ const YourReport = () => {
     const userCollections = collection(database, "grievances");
     const q = query(userCollections, where('uid', '==', user.uid));
     const data = await getDocs(q);
-    console.log(data);
     const fil = data.docs.map((doc) => ({
       ...doc.data(),
       id: doc.id,
