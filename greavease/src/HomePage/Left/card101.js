@@ -4,7 +4,6 @@ import './Card101.css'
 const Card101=(props)=>{
  
     const SubmitHandler=()=>{
-        console.log("hello");
     }
     return(
         <button onClick={SubmitHandler}className="inner-card">

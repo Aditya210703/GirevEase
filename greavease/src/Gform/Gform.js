@@ -20,6 +20,7 @@ class FormComponent extends Component {
       countryCode: "+91",
       phoneNumber: "",
       image: null,
+      Upvotes: 0,
     };
   }
 
@@ -49,7 +50,8 @@ class FormComponent extends Component {
         department: this.state.selectedOption,
         description: this.state.description,
         phoneNumber: this.state.countryCode + this.state.phoneNumber,
-        uid:auth.currentUser.uid
+        uid:auth.currentUser.uid,
+        Upvotes: 0
       });
       alert("Form submitted successfully");
       window.location.reload();
