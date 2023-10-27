@@ -204,6 +204,7 @@ class FormComponent extends Component {
                 placeholder="Enter the Gdrive link of image"
                 type="text"
                 name="image"
+                value={this.state.image}
                 onChange={this.handleImageChange}
               />
             </div>
