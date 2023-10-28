@@ -16,6 +16,9 @@ import GovernmentGrievanceShow from './Government/GovernmentCenterData/Governmen
 import GrievanceInprocess from './Government/GovernmentCenterData/GovernmentGrievanceInprocess/GovernmentProcess';
 import GrievanceSolved from './Government/GovernmentCenterData/GovernmentGrievanceSolved/GovernmentSolved';
 import Graphical from './Government/GovernmentCenterData/GovernmentChart/CovernmentChart';
+import Gabout from './Government/about/about';
+import Gprocess from './Government/process/process';
+import Grules from './Government/Rules/rules';
 function App() {
   return (
     <div className="App">
@@ -37,7 +40,9 @@ function App() {
           <Route exact path='/GovernmentHome/Inprocess' element={<GrievanceInprocess/>}/>
           <Route exact path='/GovernmentHome/Solved' element={<GrievanceSolved />}/>
           <Route exact path='/GovernmentHome/Graphical' element={<Graphical/>}/>
-          
+          <Route exact path='/GovernmentHome/about' element={<Gabout/>}/>
+          <Route exact path='/GovernmentHome/process' element={<Gprocess/>}/>
+          <Route exact path='/GovernmentHome/rules' element={<Grules/>}/>
         </Route>
       </Routes>
     </div>

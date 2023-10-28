@@ -1,6 +1,6 @@
 import React from 'react';
 import './process.css';
-import ProcessImg from "./flowchart.jpg";
+import ProcessImg from "./transparent.png";
 
 const process = () =>{
     return (
