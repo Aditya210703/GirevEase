@@ -1,5 +1,5 @@
 .pie-chart{
-    width:100%;
+    width:450px;
     height: 450px;
     display: flex;
     justify-content: center;
@@ -8,6 +8,7 @@
     padding-bottom: 1em;
     margin-bottom: 1em;
     z-index: 1000;
+    margin: 0 auto;
 }
 
 .LocalityHeading{
