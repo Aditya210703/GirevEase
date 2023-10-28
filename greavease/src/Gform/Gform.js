@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Gform.css";
-import { collection, addDoc } from "firebase/firestore";
+import { serverTimestamp, collection, addDoc } from "firebase/firestore";
 import { auth, database } from ".././firebase";
 const GrievancesRef = collection(database, "grievances");
 
@@ -20,6 +20,8 @@ class FormComponent extends Component {
       countryCode: "+91",
       phoneNumber: "",
       image: null,
+      Upvotes: 0,
+      timestamp: "",
     };
   }
 
@@ -33,12 +35,12 @@ class FormComponent extends Component {
   };
 
   handleImageChange = (e) => {
-    this.setState({ image: e.target.files[0] });
+    this.setState({ image: e.target.value });
   };
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
     try {
       await addDoc(GrievancesRef, {
         name: this.state.firstName + " " + this.state.lastName,
@@ -49,7 +51,9 @@ class FormComponent extends Component {
         department: this.state.selectedOption,
         description: this.state.description,
         phoneNumber: this.state.countryCode + this.state.phoneNumber,
-        uid:auth.currentUser.uid
+        uid:auth.currentUser.uid,
+        Upvotes: 0,
+        timestamp: serverTimestamp(),
       });
       alert("Form submitted successfully");
       window.location.reload();
@@ -165,7 +169,7 @@ class FormComponent extends Component {
               <option value="Electricity">Electricity</option>
               <option value="RoadWays">RoadWays</option>
               <option value="Law-Enforcement">Law-Enforcement</option>
-              <option value="Judicial">Judicial</option>
+              <option value="Waste">Judicial</option>
               <option value="Miscellaneous">Miscellaneous</option>
             </select>
           </label>
@@ -201,9 +205,10 @@ class FormComponent extends Component {
             Upload an Image:
             <div className="file-upload-container">
               <input
-                placeholder="Enter the supporting material"
-                type="file"
+                placeholder="Enter the Gdrive link of image"
+                type="text"
                 name="image"
+                value={this.state.image}
                 onChange={this.handleImageChange}
               />
             </div>

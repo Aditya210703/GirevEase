@@ -3,12 +3,13 @@ import { createPortal } from "react-dom";
 import "./Gdrop.css"; // Create a CSS file for styling
 import ThumbUpOffAltOutlinedIcon from '@mui/icons-material/ThumbUpOffAltOutlined';
 import CloseSharpIcon from '@mui/icons-material/CloseSharp';
+import { database } from "../firebase";
+import { updateDoc,doc } from "firebase/firestore";
 const Gdrop = (props) => {
-    const [count, setCount]=useState(0);
-     
-  const upvote = () =>{
-    setCount(count+1)
-    console.log(count);
+  const upvote = async () =>{
+    const grievanceRef = doc(database, "grievances", props.gid);
+    await updateDoc(grievanceRef, { Upvotes: (props.Upvotes)+1 });
+    window.location.reload();
   }
   const handleClose = () => {
     props.closeBackdrop();
@@ -30,8 +31,9 @@ const Gdrop = (props) => {
               <div className="gdrop-content01">Description of Grievance:</div>
               <div className="gdrop-content">{props.description}</div>
               <div className="gdrop-option">
-                <button className="upvote" onClick={upvote}><ThumbUpOffAltOutlinedIcon /></button>
-                <span>{count}</span>
+              <div className="upvote-container"><button className="upvote" onClick={upvote}><ThumbUpOffAltOutlinedIcon /></button>
+                <span>{props.Upvotes}</span>
+                </div>
                 <button className="help" onClick={handleHelp}>Help</button>
               </div>
             </div>

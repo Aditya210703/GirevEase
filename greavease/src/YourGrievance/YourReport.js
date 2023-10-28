@@ -1,21 +1,28 @@
 import './YourGrievance.css';
 import GrievShow from '../Grievances/Gshow';
 import Damage from "../Grievances/damage.webp";
+import { database, auth } from "../firebase";
+import { where, collection, getDocs, query } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+
 const YourReport = () => {
-  const YourReportList = [
-    {
-      id: "1",
-      Department: "Electricity",
-      Locality: "Kidwai Nagar",
-      By: "Ayush Sahu",
-      Description: "Description of Grievance",
-      DESIMG: Damage,
-    },
-  ];
-  const ReportDivStyle = {
-    padding: "0",
-    margin: "0",
+  const [grievanceData, setGrievanceData] = useState([]);
+  const fetchGrievanceData = async () => {
+    const user = auth.currentUser;
+    const userCollections = collection(database, "grievances");
+    const q = query(userCollections, where('uid', '==', user.uid));
+    const data = await getDocs(q);
+    const fil = data.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }));
+    setGrievanceData(fil);
   };
+
+  useEffect(() => {
+    fetchGrievanceData();
+  }, []);
+
   const ifnotfound = {
     backgroundColor: " rgba(255, 255, 255, 0)",
 
@@ -33,25 +40,26 @@ const YourReport = () => {
     color: "#B2533E",
     fontWeight: "bold",
   };
-  if (YourReportList.length === 0) {
+  if (grievanceData.length === 0) {
     return <div style={ifnotfound}>No Grievance Reported</div>;
   } else {
-    const ReportList = [];
-    for (let i = 0; i < YourReportList.length; i++) {
-      ReportList.push(
-        <div className="ShowYourGrievaceBody" key={YourReportList[i].id}>
+    return (
+      <div className="Show_Card_Body">
+        {grievanceData.map((grievance, index) => (
           <GrievShow
-            id={YourReportList[i].id}
-            Department={YourReportList[i].Department}
-            Locality={YourReportList[i].Locality}
-            By={YourReportList[i].By}
-            Description={YourReportList[i].Description}
-            DESIMG={YourReportList[i].DESIMG}
-          ></GrievShow>
-        </div>
-      );
-    }
-    return <div style={ReportDivStyle}>{ReportList}</div>;
+            gid={grievance.id}
+            id={index + 1}
+            Department={grievance.department}
+            Locality={grievance.locality}
+            By={grievance.name}
+            Description={grievance.description}
+            Upvotes = {grievance.Upvotes}
+            DESIMG={null}
+          />
+        ))}
+      </div>
+    );
+    // return <div style={ReportDivStyle}>{ReportList}</div>;
   }
   
 };
