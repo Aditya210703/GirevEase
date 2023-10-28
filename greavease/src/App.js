@@ -12,6 +12,7 @@ import GovernmentHome from './Government/GovernmentHomePage/GovernmentHome';
 import About from './about/about';
 import Process from './process/process'
 import TotalGrievance from './TotalGrievancePieChart/TotalGrievances';
+import GovernmentGrievanceShow from './Government/GovernmentCenterData/GovernmentGrievanceReported/GovernmentGrievanceShow';
 
 function App() {
   return (
@@ -29,7 +30,9 @@ function App() {
           <Route exact path="/home/about" element={<About />}/>
           <Route exact path="/home/process" element={<Process />} />
         </Route>
-        <Route exact path='/GovernmentHome' element={<GovernmentHome></GovernmentHome>}></Route>
+        <Route exact path='/GovernmentHome' element={<GovernmentHome></GovernmentHome>}>
+          <Route exact path='/GovernmentHome/Reported' element={<GovernmentGrievanceShow/> }/>
+        </Route>
       </Routes>
     </div>
   );

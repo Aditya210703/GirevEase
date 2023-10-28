@@ -6,6 +6,7 @@ import GovernmentRightLower from "../GovernmentRight/GovernmentRightLower";
 import GovernmentRightUpper from "../GovernmentRight/GovernmentRightUpper";
 import GovernmentCenter from "../GovernmentCenter/GovernmentCenter";
 import Header from "../../HomePage/home/header";
+import { Outlet } from "react-router-dom";
 const GovernmentHome=()=>{
     return(
         <div>
@@ -17,6 +18,7 @@ const GovernmentHome=()=>{
             </div>
             <div className="GovernmentHomeMiddle">
                 <GovernmentCenter></GovernmentCenter>
+                <Outlet></Outlet>
             </div>
             <div className="GovernmentHomeRight">
                 <GovernmentRightUpper></GovernmentRightUpper>

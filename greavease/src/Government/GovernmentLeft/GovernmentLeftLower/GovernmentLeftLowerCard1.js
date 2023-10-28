@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Image1 from '../GovernmentLeftImages/Reported.png'
 import Image2 from '../GovernmentLeftImages/inprocess.webp';
 import Image3 from '../GovernmentLeftImages/solved.jpg';
@@ -26,7 +27,10 @@ const GovernmentLeftLowerCard1=()=>{
       return (
         <div className="GovernmentLeftLowerCard">
           <div className="GovernmentLeftLowerCardContent">
+            <Link  to={"/GovernmentHome/Reported"}>
             <GovernmentLeftLowerCard101 name={GovernmentLeftLowerCardData[0].text} imgurl={GovernmentLeftLowerCardData[0].imgurl}></GovernmentLeftLowerCard101>
+            </Link>
+            
             <GovernmentLeftLowerCard101 name={GovernmentLeftLowerCardData[1].text} imgurl={GovernmentLeftLowerCardData[1].imgurl}></GovernmentLeftLowerCard101>
             <GovernmentLeftLowerCard101 name={GovernmentLeftLowerCardData[2].text} imgurl={GovernmentLeftLowerCardData[2].imgurl}></GovernmentLeftLowerCard101>
             <GovernmentLeftLowerCard101 name={GovernmentLeftLowerCardData[3].text} imgurl={GovernmentLeftLowerCardData[0].imgurl}></GovernmentLeftLowerCard101>
