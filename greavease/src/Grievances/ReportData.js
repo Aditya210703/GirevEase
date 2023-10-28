@@ -8,7 +8,7 @@ const ReportData = () => {
   const [grievanceData, setGrievanceData] = useState([]);
 
   const fetchGrievanceData = async () => {
-    const userCollections = collection(database, "grievances", orderBy('timestamp', 'desc'));
+    const userCollections = collection(database, "grievances");
     const data = await getDocs(userCollections);
     const fil = data.docs.map((doc) => ({
       ...doc.data(),
