@@ -2,15 +2,35 @@ import React,{useState} from "react";
 import { createPortal } from "react-dom";
 import "./GovernmentGrievanceInnerCardShow.css"; // Create a CSS file for styling
 import CloseSharpIcon from '@mui/icons-material/CloseSharp';
+import {doc, updateDoc } from "firebase/firestore";
+import { database } from "../../../firebase";
 
 const GovernmentGrievanceInnerCardShow = (props) => {
-  const [selectedOption, setSelectedOption] = useState('Pending..');
+  const [selectedOption, setSelectedOption] = useState(props.status);
   const handleClose = () => {
     props.closeBackdrop();
   } 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const handleSubmit = async ()=>{
+    const docRef = doc(database, "grievances", props.gid);
+    if(selectedOption === 'In process'){
+    const fieldToUpdate = {
+      status: selectedOption,
+    };
+    try {
+      await updateDoc(docRef, fieldToUpdate);
+      alert("Grievance successfully updated!");
+    } catch (error) {
+      console.error("Error updating document: ", error);
+    }
+    window.location.reload();
+  }
+  else{
+    alert("Grievance successfully updated!");
+  }
+  }
   return (
     <>
       {createPortal(
@@ -37,11 +57,11 @@ const GovernmentGrievanceInnerCardShow = (props) => {
               <div>
                 <label className="StatusLabel">Status:</label>
                 <select className="valueselect" value={selectedOption} onChange={handleOptionChange}>
-                  <option value="Pending..">Pending..</option>
-                  <option value="In Process">In Process</option>
-                  <option value="Solved">Solved</option>
+                  <option value="pending">Pending..</option>
+                  <option value="In process">In Process</option>
                 </select>
                 <p className="selectedoptionvalue">Status Selected: {selectedOption}</p>
+                <button onClick={handleSubmit}>Submit</button>
               </div>
             </div>
           </div>

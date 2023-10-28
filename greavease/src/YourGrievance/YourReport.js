@@ -1,6 +1,5 @@
 import './YourGrievance.css';
-import GrievShow from '../Grievances/Gshow';
-import Damage from "../Grievances/damage.webp";
+import GrievShow from './YourGrievShow';
 import { database, auth } from "../firebase";
 import { where, collection, getDocs, query } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
@@ -54,6 +53,8 @@ const YourReport = () => {
             By={grievance.name}
             Description={grievance.description}
             Upvotes = {grievance.Upvotes}
+            status = {grievance.status}
+            son = {grievance.son}
             DESIMG={null}
           />
         ))}

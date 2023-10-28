@@ -19,6 +19,7 @@ import Graphical from './Government/GovernmentCenterData/GovernmentChart/Covernm
 import Gabout from './Government/about/about';
 import Gprocess from './Government/process/process';
 import Grules from './Government/Rules/rules';
+
 function App() {
   return (
     <div className="App">

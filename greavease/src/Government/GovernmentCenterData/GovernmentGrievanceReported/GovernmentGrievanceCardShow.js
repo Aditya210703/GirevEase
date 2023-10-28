@@ -9,7 +9,8 @@ const GovernmentGrievShow = (props) => {
         <GovernmentGrievanceInnerCardShow
           imageUrl={props.DESIMG}
           description={props.Description}
-          
+          status = {props.status}
+          gid = {props.gid}
           closeBackdrop={() => {
             setgovShowCard(false);
           }}
@@ -31,7 +32,7 @@ const GovernmentGrievShow = (props) => {
           </span>
           <span className="GovernmentGrievShowSpan4">
             <span className="Governmentinner_span">Status:</span>
-            <span className="Governmentinner_span">{props.By}</span>
+            <span className="Governmentinner_span">{props.status}</span>
           </span>
         </div>
       </button>
