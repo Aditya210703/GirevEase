@@ -1,0 +1,80 @@
+.GovernmentGrievanceInnerCardbackdrop {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.GovernmentGrievanceInnerCardShow-card{
+    background-color: rgba(239, 187, 138,0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    /* min-width: 50px;
+    max-width: 40em; */
+    width:700px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 500px;
+    /* max-height: 500px;
+    min-height: 50px; */
+    /* border: 2px solid black; */
+}
+.GovernmentGrievanceInnerCardShow-card-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.GovernmentGrievanceInnerCardShow-card-header > img {
+    width: 50%;
+    /* padding-bottom: 2em; */
+    border-radius: 5%;
+    
+}
+::-webkit-scrollbar{
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+}
+.GovernmentGrievanceInnerCardShow-content01{
+    color: rgb(83, 32, 3);
+    font-size: 1.8em;
+
+    margin:  0.8em 0em;
+}
+
+.GovernmentGrievanceInnerCardShow-content {
+    color: rgb(83, 32, 3);
+    font-size: 1.5em;
+   
+}
+.close {
+    display: flex;
+    justify-content: flex-end;
+}
+.close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.StatusLabel{
+    margin-top: 1em;
+    color: rgb(83, 32, 3);
+    font-size: 1.5em;
+
+}
+.valueselect{
+    width: 10em;
+    background-color: rgba(174, 138, 87, 0.2);
+    border: 0;
+}
+.selectedoptionvalue{
+    color: rgb(83, 32, 3);
+    font-weight: bold;
+}

@@ -8,12 +8,13 @@ import ShowGriev from './Grievances/Showdata';
 import Rules from './Rules/rules';
 import YourGrievance from './YourGrievance/YourGrievance';
 import PieChart from './InYourArea/PieChar';
+import GovernmentHome from './Government/GovernmentHomePage/GovernmentHome';
 import About from './about/about';
 import Process from './process/process'
 import TotalGrievance from './TotalGrievancePieChart/TotalGrievances';
+
 function App() {
   return (
-
     <div className="App">
       <Routes>
         <Route path="/" element={<LandingPage />} />
@@ -28,9 +29,9 @@ function App() {
           <Route exact path="/home/about" element={<About />}/>
           <Route exact path="/home/process" element={<Process />} />
         </Route>
+        <Route exact path='/GovernmentHome' element={<GovernmentHome></GovernmentHome>}></Route>
       </Routes>
     </div>
-
   );
 }
 

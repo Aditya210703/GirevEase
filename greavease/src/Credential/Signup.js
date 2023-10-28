@@ -14,7 +14,7 @@ import { collection, addDoc } from "firebase/firestore";
 
 
 const Signup = () => {
-  const [As, setAs] = React.useState("");
+  const [As, setAs] = React.useState("Locality Member");
 
   const handleChange = (event) => {
     setAs(event.target.value);
@@ -62,7 +62,10 @@ const Signup = () => {
     createUserWithEmailAndPassword(auth, values.email, values.password).then(res => {
       //console.log(res);
       alert("Sign up successfully");
+      if(As==="Locality Member")
       navigate('/home', { replace: true });
+      else
+      navigate('/GovernmentHome', { relative: true})
       const user = res.user;
       try {
         addDoc(UserRef, {
