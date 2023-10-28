@@ -78,3 +78,17 @@
     color: rgb(83, 32, 3);
     font-weight: bold;
 }
+.btn-submit {
+    background-color: rgb(83, 32, 3);
+    color: white;
+    padding: 5px 16px;
+    margin-top: 0.8em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    align-items: center;
+    width: auto;
+    height: 2em;
+    display: inline-block;
+}
