@@ -6,8 +6,10 @@ const GovernmentSolvedShow = (props) => {
   return (
     <>
       {gSolvedshowCard && (
+        console.log(props.son),
         <GovernmentSolvedInnerCardShow imageUrl={props.DESIMG}
-        description={props.Description} Son={props.On} department={props.Department}
+        description={props.Description} son={props.son} department={props.Department}
+        
         closeBackdrop={() => {
           setgSolvedShowCard(false);
         }}></GovernmentSolvedInnerCardShow>
@@ -28,7 +30,7 @@ const GovernmentSolvedShow = (props) => {
           </span>
           <span className="GovernmentSolvedShowSpan4">
             <span className="GovernmentSolved_span">Solved On:</span>
-            <span className="GovernmentSolved_span">{props.On}</span>
+            <span className="GovernmentSolved_span">{props.son}</span>
           </span>
         </div>
       </button>

@@ -3,7 +3,6 @@ import './GovernmentRightLowerIn.css'
 const GovernmentRightLowerIn=(props)=>{
  
     const SubmitHandler=()=>{
-        console.log("hello");
     }
     return(
         <button onClick={SubmitHandler}className="GovernmentRightLowerIninnerinfo">

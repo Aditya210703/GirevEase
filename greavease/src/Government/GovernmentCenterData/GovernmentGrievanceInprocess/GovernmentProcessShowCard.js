@@ -2,15 +2,38 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import "./GovernmentProcessShowCard.css"; // Create a CSS file for styling
 import CloseSharpIcon from "@mui/icons-material/CloseSharp";
+import { serverTimestamp, doc, updateDoc } from "firebase/firestore";
+import { database } from "../../../firebase";
 
 const GovernmentProcessShowCard = (props) => {
-  const [selectedOption, setSelectedOption] = useState("Pending..");
+  const [selectedOption, setSelectedOption] = useState(props.status);
   const handleClose = () => {
     props.closeBackdrop();
   };
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const handleSubmit = async ()=>{
+    const docRef = doc(database, "grievances", props.gid);
+    const currentDate = new Date();
+    const today = currentDate.toISOString().split('T')[0];
+    if(selectedOption === 'solved'){
+    const fieldToUpdate = {
+      status: selectedOption,
+      son: today,
+    };
+    try {
+      await updateDoc(docRef, fieldToUpdate);
+      alert("Grievance successfully updated!");
+    } catch (error) {
+      console.error("Error updating document: ", error);
+    }
+    window.location.reload();
+  }
+  else{
+    alert("Grievance successfully updated!");
+  }
+  }
   return (
     <>
       {createPortal(
@@ -48,15 +71,14 @@ const GovernmentProcessShowCard = (props) => {
                   className="valueselect"
                   value={selectedOption}
                   onChange={handleOptionChange}
-                >
-                  
-                  <option value="In Process">In Process</option>
-                  <option value="Solved">Solved</option>
-                  <option value="Rejected">Rejected</option>
+                > 
+                  <option value="In process">In process</option>
+                  <option value="solved">Solved</option>
                 </select>
                 <p className="selectedoptionvalue">
                   Status Selected: {selectedOption}
                 </p>
+              <button onClick={handleSubmit}>Submit</button>
               </div>
             </div>
           </div>

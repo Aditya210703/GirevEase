@@ -34,7 +34,7 @@ const GovernmentSolvedInnerCardShow = (props) => {
               
                 <div className="solvedDepartment">
                   <span className="OnDe">Solved On:</span>
-                  <span className="OnDe">{props.Son}</span>
+                  <span className="OnDe">{props.son}</span>
                 </div>
                 <div className="solvedDepartment">
                   <span className="OnDe">Department:</span>

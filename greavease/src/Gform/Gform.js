@@ -22,6 +22,7 @@ class FormComponent extends Component {
       image: null,
       Upvotes: 0,
       timestamp: "",
+      status: "pending",
     };
   }
 
@@ -54,6 +55,7 @@ class FormComponent extends Component {
         uid:auth.currentUser.uid,
         Upvotes: 0,
         timestamp: serverTimestamp(),
+        status: "pending",
       });
       alert("Form submitted successfully");
       window.location.reload();
