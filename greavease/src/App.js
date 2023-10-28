@@ -8,6 +8,7 @@ import ShowGriev from './Grievances/Showdata';
 import Rules from './Rules/rules';
 import YourGrievance from './YourGrievance/YourGrievance';
 import PieChart from './InYourArea/PieChar';
+import GovernmentHome from './Government/GovernmentHomePage/GovernmentHome';
 function App() {
   return (
 
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/home/InYourArea" element={<PieChart></PieChart>}/>
           <Route exact path="/home/YourGrievance" element={<YourGrievance></YourGrievance>}/>
         </Route>
+        <Route exact path='/GovernmentHome' element={<GovernmentHome></GovernmentHome>}></Route>
       </Routes>
     </div>
 
