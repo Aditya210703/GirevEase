@@ -13,7 +13,9 @@ import About from './about/about';
 import Process from './process/process'
 import TotalGrievance from './TotalGrievancePieChart/TotalGrievances';
 import GovernmentGrievanceShow from './Government/GovernmentCenterData/GovernmentGrievanceReported/GovernmentGrievanceShow';
-
+import GrievanceInprocess from './Government/GovernmentCenterData/GovernmentGrievanceInprocess/GovernmentProcess';
+import GrievanceSolved from './Government/GovernmentCenterData/GovernmentGrievanceSolved/GovernmentSolved';
+import Graphical from './Government/GovernmentCenterData/GovernmentChart/CovernmentChart';
 function App() {
   return (
     <div className="App">
@@ -32,6 +34,10 @@ function App() {
         </Route>
         <Route exact path='/GovernmentHome' element={<GovernmentHome></GovernmentHome>}>
           <Route exact path='/GovernmentHome/Reported' element={<GovernmentGrievanceShow/> }/>
+          <Route exact path='/GovernmentHome/Inprocess' element={<GrievanceInprocess/>}/>
+          <Route exact path='/GovernmentHome/Solved' element={<GrievanceSolved />}/>
+          <Route exact path='/GovernmentHome/Graphical' element={<Graphical/>}/>
+          
         </Route>
       </Routes>
     </div>

@@ -30,10 +30,15 @@ const GovernmentLeftLowerCard1=()=>{
             <Link  to={"/GovernmentHome/Reported"}>
             <GovernmentLeftLowerCard101 name={GovernmentLeftLowerCardData[0].text} imgurl={GovernmentLeftLowerCardData[0].imgurl}></GovernmentLeftLowerCard101>
             </Link>
-            
+            <Link to="/GovernmentHome/Inprocess">
             <GovernmentLeftLowerCard101 name={GovernmentLeftLowerCardData[1].text} imgurl={GovernmentLeftLowerCardData[1].imgurl}></GovernmentLeftLowerCard101>
+            </Link>
+            <Link to="/GovernmentHome/Solved">
             <GovernmentLeftLowerCard101 name={GovernmentLeftLowerCardData[2].text} imgurl={GovernmentLeftLowerCardData[2].imgurl}></GovernmentLeftLowerCard101>
+            </Link>
+            <Link to="/GovernmentHome/Graphical"> 
             <GovernmentLeftLowerCard101 name={GovernmentLeftLowerCardData[3].text} imgurl={GovernmentLeftLowerCardData[0].imgurl}></GovernmentLeftLowerCard101>
+            </Link>
           </div>
         </div>
       );

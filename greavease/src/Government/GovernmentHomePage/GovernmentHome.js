@@ -5,7 +5,7 @@ import GovernmentLeftLowerCard1 from "../GovernmentLeft/GovernmentLeftLower/Gove
 import GovernmentRightLower from "../GovernmentRight/GovernmentRightLower";
 import GovernmentRightUpper from "../GovernmentRight/GovernmentRightUpper";
 import GovernmentCenter from "../GovernmentCenter/GovernmentCenter";
-import Header from "../../HomePage/home/header";
+import Header from "../GovernmentHeader/Header";
 import { Outlet } from "react-router-dom";
 const GovernmentHome=()=>{
     return(
