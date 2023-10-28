@@ -61,7 +61,7 @@ const GovernmentGrievanceInnerCardShow = (props) => {
                   <option value="In process">In Process</option>
                 </select>
                 <p className="selectedoptionvalue">Status Selected: {selectedOption}</p>
-                <button onClick={handleSubmit}>Submit</button>
+                <button onClick={handleSubmit} className="btn-submit">Submit</button>
               </div>
             </div>
           </div>

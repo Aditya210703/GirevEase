@@ -78,7 +78,7 @@ const GovernmentProcessShowCard = (props) => {
                 <p className="selectedoptionvalue">
                   Status Selected: {selectedOption}
                 </p>
-              <button onClick={handleSubmit}>Submit</button>
+              <button onClick={handleSubmit} className="submit">Submit</button>
               </div>
             </div>
           </div>
