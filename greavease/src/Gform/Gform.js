@@ -171,7 +171,7 @@ class FormComponent extends Component {
               <option value="Electricity">Electricity</option>
               <option value="RoadWays">RoadWays</option>
               <option value="Law-Enforcement">Law-Enforcement</option>
-              <option value="Waste">Judicial</option>
+              <option value="Waste">Waste</option>
               <option value="Miscellaneous">Miscellaneous</option>
             </select>
           </label>
