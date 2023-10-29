@@ -5,8 +5,9 @@ import water from "./left_bottom/water.png";
 import elec from "./left_bottom/elecic.png";
 import road from "./left_bottom/road.png";
 import law from "./left_bottom/law.png";
-import jury from "./left_bottom/jury.png";
+import jury from "./left_bottom/Waste.png";
 import mis from "./left_bottom/mis.png";
+import { Link } from "react-router-dom";
 const Card1 = () => {
   const infodata = [
     {
@@ -38,7 +39,8 @@ const Card1 = () => {
     <div className="card">
       <div className="card-header">Departments</div>
       <div className="card-content">
-        <Card101 name={infodata[0].text} icon={infodata[0].imgurl}></Card101>
+        <Link to={"/home/Water"}>
+        <Card101 name={infodata[0].text} icon={infodata[0].imgurl}></Card101></Link>
         <Card101 name={infodata[1].text} icon={infodata[1].imgurl}></Card101>
         <Card101 name={infodata[2].text} icon={infodata[2].imgurl}></Card101>
         <Card101 name={infodata[3].text} icon={infodata[3].imgurl}></Card101>
