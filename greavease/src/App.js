@@ -20,6 +20,7 @@ import Gabout from './Government/about/about';
 import Gprocess from './Government/process/process';
 import Grules from './Government/Rules/rules';
 import LocalitySolved from './Solved/LocalitySolved';
+import Water from './Departments/Water';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/home/YourGrievance" element={<YourGrievance></YourGrievance>}/>
           <Route exact path="/home/about" element={<About />}/>
           <Route exact path="/home/process" element={<Process />} />
+          <Route exact path="/home/Water" element={<Water></Water>} />
           <Route exact path="/home/solved" element={<LocalitySolved></LocalitySolved>} />
         </Route>
         <Route exact path='/GovernmentHome' element={<GovernmentHome></GovernmentHome>}>
