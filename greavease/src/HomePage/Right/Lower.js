@@ -22,10 +22,6 @@ const Lower = () => {
           imgurl: Process,
         },
         {
-          text: "redressal process",
-          imgurl: Red,
-        },
-        {
             text: "About Us",
             imgurl: About,
           },
@@ -34,15 +30,14 @@ const Lower = () => {
       <div className="info">
         <div>
           <button onClick={submitHandle} className="btn2">
-            informatics &rarr;
+            Informatics &rarr;
           </button>
           <Link to='/home/Rules'>
             <LowerIn name={infodata[0].text} imgurl={infodata[0].imgurl} ></LowerIn>
           </Link>
           <Link to= '/home/process'><LowerIn name={infodata[1].text} imgurl={infodata[1].imgurl} ></LowerIn>
           </Link>
-          <LowerIn name={infodata[2].text} imgurl={infodata[2].imgurl} ></LowerIn>
-          <Link to='/home/About'><LowerIn name={infodata[3].text} imgurl={infodata[3].imgurl} ></LowerIn></Link>
+          <Link to='/home/About'><LowerIn name={infodata[2].text} imgurl={infodata[2].imgurl} ></LowerIn></Link>
         </div>
        
       </div>

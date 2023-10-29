@@ -1,0 +1,21 @@
+.LocalitySolvedShow_Card {
+    width: 100%;
+    margin: 0 auto;
+    
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+  }
+  
+  .LocalitySolvedShow_Card_Header{
+    height:2em;
+    color: #B2533E;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+  }
+  
+  .LocalitySolvedReportShow_Card_Body{
+    padding: 0.5em 1em;
+  }
+  

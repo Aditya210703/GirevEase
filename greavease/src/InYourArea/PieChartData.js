@@ -47,8 +47,8 @@ const PieChartData = () => {
       datasets: [
         {
           data: Object.values(departmentCounts),
-          backgroundColor: ['#00A9FF', '#9E9FA5', '#FFD95A', '#7D7C7C', '#A7D397', '#FF6384'],
-          hoverBackgroundColor: ['#00A9FF', '#9E9FA5', '#FFD95A', '#7D7C7C', '#A7D397', '#FF6384'],
+          backgroundColor: ['#00A9F1', '#9E9FA5', '#FFD95A', '#7D7C7C', '#A7D397', '#FF6384'],
+          hoverBackgroundColor: ['#00A9F1', '#9E9FA5', '#FFD95A', '#7D7C7C', '#A7D397', '#FF6384'],
         },
       ],
     };

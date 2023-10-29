@@ -11,8 +11,8 @@ const Upper = () => {
           Meetups &rarr;
         </button>
       </div>
-      <p className="para">this feature is coming soon.....</p>
-      <p className="para1">on place for local community meetings info.....</p>
+      <p className="para">This feature is coming soon.....</p>
+      <p className="para1">On place for local community meetings info.....</p>
     </div>
   );
 };
