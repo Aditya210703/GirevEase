@@ -8,6 +8,7 @@ const WaterReportData = () => {
       Department: "Water-Works",
       Locality: "Kidwai Nagar",
       On: "27/10/2023",
+      By:"Harsh Upadhyay",
       Description: "Description of Grievance",
       DESIMG: Damage,
     },
@@ -16,6 +17,7 @@ const WaterReportData = () => {
       Department: "Water-Works",
       Locality: "Jankipuram",
       On: "28/10/2023",
+      By:"Ayush Sahu",
       Description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget leo vel mi rutrum volutpat. Proin ac pellentesque orci. Nulla at fringilla orci. Nulla aliquet quam quis justo vulputate, quis rutrum metus consequat. Vestibulum consectetur vitae dolor vitae feugiat. Nunc et condimentum leo. Etiam mollis tristique augue ac posuere. Curabitur imperdiet venenatis lacinia. Vivamus euismod mi quis nulla elementum bibendum. Sed pulvinar ultricies velit, sit amet ornare magna eleifend et. Nulla ac convallis felis, at vestibulum dolor.",
       DESIMG: Damage,
@@ -25,6 +27,7 @@ const WaterReportData = () => {
       Department: "Water-Works",
       Locality: "GomtiNagar",
       On: "29/10/2023",
+      By:"Ayush Sahu",
       Description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget leo vel mi rutrum volutpat. Proin ac pellentesque orci. Nulla at fringilla orci. Nulla aliquet quam quis justo vulputate, quis rutrum metus consequat. Vestibulum consectetur vitae dolor vitae feugiat. Nunc et condimentum leo. Etiam mollis tristique augue ac posuere. Curabitur imperdiet venenatis lacinia. Vivamus euismod mi quis nulla elementum bibendum. Sed pulvinar ultricies velit, sit amet ornare magna eleifend et. Nulla ac convallis felis, at vestibulum dolor.",
       DESIMG: Damage,
@@ -68,6 +71,7 @@ const WaterReportData = () => {
             On={WaterReport[i].On}
             Description={WaterReport[i].Description}
             DESIMG={WaterReport[i].DESIMG}
+            By={WaterReport[i].By}
           ></GrievShow>
         </div>
       );
