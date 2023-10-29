@@ -4,7 +4,7 @@ import "./GovernmentProcessShowCard.css"; // Create a CSS file for styling
 import CloseSharpIcon from "@mui/icons-material/CloseSharp";
 import { serverTimestamp, doc, updateDoc } from "firebase/firestore";
 import { database } from "../../../firebase";
-
+import Leakage from './leakage.jpeg';
 const GovernmentProcessShowCard = (props) => {
   const [selectedOption, setSelectedOption] = useState(props.status);
   const handleClose = () => {
@@ -47,7 +47,7 @@ const GovernmentProcessShowCard = (props) => {
               </div>
               <div className="GovernmentProcessShowCard-card-header">
                 <img
-                  src={props.imageUrl}
+                  src={Leakage}
                   alt="GovernmentProcessInnerCard Card Header Image"
                 />
               </div>

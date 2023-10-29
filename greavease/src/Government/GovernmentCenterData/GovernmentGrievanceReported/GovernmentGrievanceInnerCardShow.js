@@ -4,7 +4,7 @@ import "./GovernmentGrievanceInnerCardShow.css"; // Create a CSS file for stylin
 import CloseSharpIcon from '@mui/icons-material/CloseSharp';
 import {doc, updateDoc } from "firebase/firestore";
 import { database } from "../../../firebase";
-
+import Leakage from './leakage.jpeg';
 const GovernmentGrievanceInnerCardShow = (props) => {
   const [selectedOption, setSelectedOption] = useState(props.status);
   const handleClose = () => {
@@ -44,7 +44,7 @@ const GovernmentGrievanceInnerCardShow = (props) => {
               </div>
               <div className="GovernmentGrievanceInnerCardShow-card-header">
                 <img
-                  src={props.imageUrl}
+                  src={Leakage}
                   alt="GovernmentGrievanceInnerCard Card Header Image"
                 />
               </div>

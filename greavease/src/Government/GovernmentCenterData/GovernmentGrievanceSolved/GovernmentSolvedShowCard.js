@@ -2,7 +2,7 @@ import React from "react";
 import { createPortal } from "react-dom";
 import "./GovernmentSolvedShowCard.css"; // Create a CSS file for styling
 import CloseSharpIcon from '@mui/icons-material/CloseSharp';
-
+import Leakage from './leakage.jpeg';
 const GovernmentSolvedInnerCardShow = (props) => {
   const handleClose = () => {
     props.closeBackdrop();
@@ -21,7 +21,7 @@ const GovernmentSolvedInnerCardShow = (props) => {
               </div>
               <div className="GovernmentSolvedInnerCardShow-card-header">
                 <img
-                  src={props.imageUrl}
+                  src={Leakage}
                   alt="GovernmentSolvedInnerCard Card Header Image"
                 />
               </div>

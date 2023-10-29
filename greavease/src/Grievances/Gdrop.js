@@ -5,6 +5,7 @@ import ThumbUpOffAltOutlinedIcon from '@mui/icons-material/ThumbUpOffAltOutlined
 import CloseSharpIcon from '@mui/icons-material/CloseSharp';
 import { database } from "../firebase";
 import { updateDoc,doc } from "firebase/firestore";
+import Leakage from './leakage.jpeg';
 const Gdrop = (props) => {
   const upvote = async () =>{
     const grievanceRef = doc(database, "grievances", props.gid);
@@ -26,7 +27,7 @@ const Gdrop = (props) => {
               <div className="close"><button className="close-btn" onClick={handleClose}><CloseSharpIcon /></button>
               </div>
               <div className="gdrop-card-header">
-                <img src={props.imageUrl} alt="Card Header Image" className="GrievanceImage"/>
+                <img src={Leakage} alt="Card Header Image" className="GrievanceImage"/>
               </div>
               <div className="gdrop-content01">Description of Grievance:</div>
               <div className="gdrop-content">{props.description}</div>
