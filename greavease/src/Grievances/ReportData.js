@@ -53,7 +53,7 @@ const ReportData = () => {
             By={grievance.name}
             Description={grievance.description}
             Upvotes = {grievance.Upvotes}
-            DESIMG={null}
+            DESIMG={grievance.image}
           />
         ))}
       </div>

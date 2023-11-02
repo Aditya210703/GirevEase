@@ -4,7 +4,9 @@ import { serverTimestamp, collection, addDoc } from "firebase/firestore";
 import { auth, database } from ".././firebase";
 const GrievancesRef = collection(database, "grievances");
 
+
 class FormComponent extends Component {
+
   constructor(props) {
     super(props);
 
@@ -19,7 +21,7 @@ class FormComponent extends Component {
       selectedOption: "Miscellaneous",
       countryCode: "+91",
       phoneNumber: "",
-      image: null,
+      image: "",
       Upvotes: 0,
       timestamp: "",
       status: "pending",
@@ -35,8 +37,22 @@ class FormComponent extends Component {
     this.setState({ selectedOption: e.target.value });
   };
 
+
   handleImageChange = (e) => {
-    this.setState({ image: e.target.value });
+    // this.setState({ image: e.target.value });
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const base64String = e.target.result;
+        this.setState({ image: base64String });
+      };
+  
+      reader.readAsDataURL(file);
+    }
+
+
   };
 
   handleSubmit = async (e) => {
@@ -52,9 +68,10 @@ class FormComponent extends Component {
         department: this.state.selectedOption,
         description: this.state.description,
         phoneNumber: this.state.countryCode + this.state.phoneNumber,
-        uid:auth.currentUser.uid,
+        uid: auth.currentUser.uid,
         Upvotes: 0,
         timestamp: serverTimestamp(),
+        image: this.state.image,
         status: "pending",
       });
       alert("Form submitted successfully");
@@ -101,7 +118,7 @@ class FormComponent extends Component {
           <label>
             Street:
             <input
-            required
+              required
               type="text"
               name="street"
               value={this.state.street}
@@ -113,7 +130,7 @@ class FormComponent extends Component {
           <label>
             Locality:
             <input
-            required
+              required
               type="text"
               name="locality"
               value={this.state.locality}
@@ -125,7 +142,7 @@ class FormComponent extends Component {
           <label>
             City:
             <input
-            required
+              required
               type="text"
               name="city"
               value={this.state.city}
@@ -137,7 +154,7 @@ class FormComponent extends Component {
           <label>
             State:
             <input
-            required
+              required
               type="text"
               name="state"
               value={this.state.state}
@@ -149,7 +166,7 @@ class FormComponent extends Component {
           <label>
             Describe Your Case:
             <textarea
-            required
+              required
               name="description"
               value={this.state.description}
               onChange={this.handleInputChange}
@@ -161,7 +178,7 @@ class FormComponent extends Component {
           <label>
             Choose an Option:
             <select
-            required
+              required
               name="selectedOption"
               value={this.state.selectedOption}
               onChange={this.handleSelectChange}
@@ -180,7 +197,7 @@ class FormComponent extends Component {
           <label htmlFor="phoneNumber">Phone Number:</label>
           <div className="phone-input-container">
             <input
-            required
+              required
               type="tel"
               id="countryCode"
               name="countryCode"
@@ -190,7 +207,7 @@ class FormComponent extends Component {
               className="country-code-input"
             />
             <input
-            required
+              required
               type="tel"
               id="phoneNumber"
               name="phoneNumber"
@@ -207,15 +224,16 @@ class FormComponent extends Component {
             Upload an Image:
             <div className="file-upload-container">
               <input
+              required
                 placeholder="Enter the Gdrive link of image"
-                type="text"
-                name="image"
-                value={this.state.image}
+                type="file"
+                accept="image/*"
                 onChange={this.handleImageChange}
+                name="image"
               />
             </div>
           </label>
-          
+
 
           <br />
 

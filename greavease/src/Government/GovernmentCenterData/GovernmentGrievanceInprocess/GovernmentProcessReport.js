@@ -56,7 +56,7 @@ const GovernmentProcessReportData = () => {
             Description={grievance.description}
             Upvotes = {grievance.Upvotes}
             status = {grievance.status}
-            DESIMG={null}
+            DESIMG={grievance.image}
           />
         ))}
       </div>

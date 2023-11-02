@@ -27,7 +27,7 @@ const Gdrop = (props) => {
               <div className="close"><button className="close-btn" onClick={handleClose}><CloseSharpIcon /></button>
               </div>
               <div className="gdrop-card-header">
-                <img src={Leakage} alt="Card Header Image" className="GrievanceImage"/>
+                <img src={props.imageUrl} alt="Card Header Image" className="GrievanceImage"/>
               </div>
               <div className="gdrop-content01">Description of Grievance:</div>
               <div className="gdrop-content">{props.description}</div>

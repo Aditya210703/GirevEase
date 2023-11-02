@@ -44,7 +44,7 @@ const GovernmentGrievanceInnerCardShow = (props) => {
               </div>
               <div className="GovernmentGrievanceInnerCardShow-card-header">
                 <img
-                  src={Leakage}
+                  src={props.imageUrl}
                   alt="GovernmentGrievanceInnerCard Card Header Image"
                 />
               </div>
