@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@types/react-phone-number-input": "^3.0.16",
-    "firebase": "^10.5.0",
-    "react-phone-number-input": "^3.3.7"
-  }
-}
