@@ -54,7 +54,7 @@ const Header = () => {
       if (user) {
         const userDataCollection = 'user';
         const userCollection = collection(database, userDataCollection);
-  
+        
         const q = query(userCollection, where('UID', '==', user.uid));
   
         // Fetch the data using the query

@@ -1,10 +1,7 @@
 import React from "react";
 import { createPortal } from "react-dom";
 import "../Grievances/Gdrop.css";
-import ThumbUpOffAltOutlinedIcon from '@mui/icons-material/ThumbUpOffAltOutlined';
 import CloseSharpIcon from '@mui/icons-material/CloseSharp';
-import { database } from "../firebase";
-import { updateDoc,doc } from "firebase/firestore";
 const Gdrop = (props) => {
   const handleClose = () => {
     props.closeBackdrop();
@@ -18,7 +15,7 @@ const Gdrop = (props) => {
               <div className="close"><button className="close-btn" onClick={handleClose}><CloseSharpIcon /></button>
               </div>
               <div className="gdrop-card-header">
-                <img src={props.imageUrl} alt="Card Header Image" className="GrievanceImage"/>
+                <img src={props.imageUrl} alt="Card-Header-Images" className="GrievanceImage"/>
               </div>
               <div className="gdrop-content01">Description of Grievance:</div>
               <div className="gdrop-content">{props.description}</div>

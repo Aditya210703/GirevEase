@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import "./Gform.css";
 import { serverTimestamp, collection, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 import { auth, database } from ".././firebase";
 const GrievancesRef = collection(database, "grievances");
-
-
 class FormComponent extends Component {
 
   constructor(props) {
@@ -56,7 +55,13 @@ class FormComponent extends Component {
   };
 
   handleSubmit = async (e) => {
+    const navigate =useNavigate();
     e.preventDefault();
+    console.log(auth.currentUser);
+    if(!auth.currentUser){
+      navigate('/signin', { replace: true });
+    }
+    else{
     // console.log(this.state);
     try {
       await addDoc(GrievancesRef, {
@@ -79,6 +84,7 @@ class FormComponent extends Component {
     } catch (error) {
       alert("An error occurred: " + error.message);
     }
+  }
   };
 
   render() {

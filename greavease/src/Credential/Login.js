@@ -4,9 +4,10 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from ".././firebase";
+import { auth, database } from ".././firebase";
 import { useNavigate } from "react-router-dom";
-
+import { collection, query, getDocs, where } from "firebase/firestore";
+import { useState } from "react";
 const initialValues = {
   username: "",
   password: "",
@@ -17,16 +18,31 @@ const validationSchema = Yup.object().shape({
   username: Yup.string().email("Please enter a valid email").required("Email is required"),
   password: Yup.string().required("Password is required"),
 });
-
 const Login = () => {
   const navigate = useNavigate();
 
   const onSubmit = (values, props) => {
     signInWithEmailAndPassword(auth, values.username, values.password)
-      .then((userCredential) => {
+      .then(async (userCredential) => {
         const user = userCredential.user;
+        const fetch = async () => {
+          const userDataCollection = 'user';
+          const userCollection = collection(database, userDataCollection);
+          const q = query(userCollection, where('UID', '==', user.uid));
+          const querySnapshot = await getDocs(q);
+          const doc = querySnapshot.docs[0];
+          const userData = doc.data();
+          if (userData.signInType === 'Government Official') {
+            alert("Sign In successful");
+            navigate('/GovernmentHome', { replace: true });
+            return true;
+          }
+          return false;
+        }
+        if(fetch()===false){
         alert("Sign In successful");
         navigate('/home', { replace: true });
+      }
       })
       .catch((error) => {
         if (error.code === "auth/wrong-password") {

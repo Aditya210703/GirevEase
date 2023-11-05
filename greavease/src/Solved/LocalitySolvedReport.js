@@ -1,5 +1,4 @@
 import "./LocalitySolved.css";
-import Damage from "./damage.webp";
 import GovernmentSolvedShow from "../Government/GovernmentCenterData/GovernmentGrievanceSolved/GovernmentSolvedShow";
 import { database } from "../firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
