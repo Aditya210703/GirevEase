@@ -55,13 +55,7 @@ class FormComponent extends Component {
   };
 
   handleSubmit = async (e) => {
-    const navigate =useNavigate();
     e.preventDefault();
-    console.log(auth.currentUser);
-    if(!auth.currentUser){
-      navigate('/signin', { replace: true });
-    }
-    else{
     // console.log(this.state);
     try {
       await addDoc(GrievancesRef, {
@@ -84,7 +78,6 @@ class FormComponent extends Component {
     } catch (error) {
       alert("An error occurred: " + error.message);
     }
-  }
   };
 
   render() {
