@@ -7,12 +7,18 @@ import { database } from "../../../firebase";
 import Leakage from './leakage.jpeg';
 const GovernmentProcessShowCard = (props) => {
   const [selectedOption, setSelectedOption] = useState(props.status);
+  const [selectedImage, setSelectedImage] = useState(null); 
   const handleClose = () => {
     props.closeBackdrop();
   };
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const imageUrl = URL.createObjectURL(file);
+    setSelectedImage(imageUrl);
+  }; 
   const handleSubmit = async ()=>{
     const docRef = doc(database, "grievances", props.gid);
     const currentDate = new Date();
@@ -78,6 +84,14 @@ const GovernmentProcessShowCard = (props) => {
                 <p className="selectedoptionvalue">
                   Status Selected: {selectedOption}
                 </p>
+                <div>
+                  <label className="solved-img">Upload image of solved grievance: </label>
+                <input
+                type="file"
+                onChange={handleImageChange}
+              />
+                <img alt="preview" src={selectedImage}/>
+                </div>
               <button onClick={handleSubmit} className="submit">Submit</button>
               </div>
             </div>
