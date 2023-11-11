@@ -56,7 +56,7 @@ const GovernmentSolvedReportData = () => {
             Upvotes = {grievance.Upvotes}
             status = {grievance.status}
             son = {grievance.son}
-            DESIMG={grievance.image}
+            DESIMG={grievance.simg}
           />
         ))}
       </div>

@@ -4,7 +4,6 @@ import "./GovernmentProcessShowCard.css"; // Create a CSS file for styling
 import CloseSharpIcon from "@mui/icons-material/CloseSharp";
 import { serverTimestamp, doc, updateDoc } from "firebase/firestore";
 import { database } from "../../../firebase";
-import Leakage from './leakage.jpeg';
 const GovernmentProcessShowCard = (props) => {
   const [selectedOption, setSelectedOption] = useState(props.status);
   const [selectedImage, setSelectedImage] = useState(null); 
@@ -14,10 +13,16 @@ const GovernmentProcessShowCard = (props) => {
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    const imageUrl = URL.createObjectURL(file);
-    setSelectedImage(imageUrl);
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const base64String = e.target.result;
+        setSelectedImage(base64String);
+      };
+      reader.readAsDataURL(file);
+    }
   }; 
   const handleSubmit = async ()=>{
     const docRef = doc(database, "grievances", props.gid);
@@ -27,6 +32,7 @@ const GovernmentProcessShowCard = (props) => {
     const fieldToUpdate = {
       status: selectedOption,
       son: today,
+      simg: selectedImage,
     };
     try {
       await updateDoc(docRef, fieldToUpdate);

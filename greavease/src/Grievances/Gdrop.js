@@ -5,7 +5,6 @@ import ThumbUpOffAltOutlinedIcon from '@mui/icons-material/ThumbUpOffAltOutlined
 import CloseSharpIcon from '@mui/icons-material/CloseSharp';
 import { database } from "../firebase";
 import { updateDoc,doc } from "firebase/firestore";
-import Leakage from './leakage.jpeg';
 const Gdrop = (props) => {
   const upvote = async () =>{
     const grievanceRef = doc(database, "grievances", props.gid);

@@ -12,15 +12,15 @@ const GovernmentRightLower = () => {
 
     const GovernmentRightLowerinfodata = [
         {
-          text: "rules regarding grievances",
+          text: "Rules Regarding Grievances",
           imgurl: Right1,
         },
         {
-          text: "process flow",
+          text: "Process Flow",
           imgurl: Right2,
         },
         {
-            text: "about us",
+            text: "About us",
             imgurl: Right3,
           },
       ];
